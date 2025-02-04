@@ -10,7 +10,7 @@ export const Header:FC = () => {
         <ul className={"flex gap-16 primary items-center text-black"}>
             <Link href={"/catalog"}>Каталог</Link>
             <Link href={"/news"}>Новинки</Link>
-            <Link href={"/about-us"}>О нас</Link>
+            <Link href={"/about"}>О нас</Link>
             <Link href={"/delivery"}>Доставка</Link>
         </ul>
        <Action/>

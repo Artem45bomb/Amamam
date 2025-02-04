@@ -11,7 +11,7 @@ export const Footer: FC = () => {
         <div className={'flex-col flex w-full border-b border-gray-400 pt-32 pb-10'}>
             <div className={" flex justify-between gap-10"}>
                 <div className={'flex flex-col'}>
-                    <BtnIcon className={'w-72 h-10'}>
+                    <BtnIcon className={'w-72 h-10 ml-auto'}>
                         <Image src={"/icon/logo-black.svg"} alt={"logo icon"} fill/>
                     </BtnIcon>
                     <div className={'font-gilroy mt-16'}>
@@ -40,7 +40,7 @@ export const Footer: FC = () => {
                         <Link href={"/reviews"}>Отзывы</Link>
                     </ul>
                 </div>
-                <div className={'flex flex-col font-gilroy font-medium text-2xl gap-5'}>
+                <div className={'flex flex-col font-gilroy font-medium text-2xl gap-5 '}>
                     <h2 className={'text-primary text-nowrap text-black'}>О компании</h2>
                     <ul className={'flex flex-col gap-5 text-base text-primary font-light'}>
                         <Link href={"/career"}>Карьера</Link>
@@ -48,7 +48,7 @@ export const Footer: FC = () => {
                         <Link href={"/contacts"}>Контакты</Link>
                     </ul>
                 </div>
-                <div className={'max-w-72 font-gilroy font-normal text-base'}>
+                <div className={'max-w-72 font-gilroy font-normal text-base text-black'}>
                     <p>Наши подписчики в курсе всех новинок и специальных предложений</p>
                     <BtnAction className={'mt-8 mb-11'}>
                         Подписаться
