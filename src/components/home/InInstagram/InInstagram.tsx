@@ -12,7 +12,7 @@ const slidesInitial: SliderItem[] = [{
     id: '3-in', srcImage: '/png/potato.png'
 }]
 
-export const InInstagram: FC = () => {
+export const InInstagram: FC<Stylable> = ({className}) => {
     const [slides, setSlides] = useState(slidesInitial); // Хранение слайдов по их индексам
     const [active, setActive] = useState(0);
 
@@ -26,7 +26,7 @@ export const InInstagram: FC = () => {
 
     return (<div
         style={{backgroundImage: `url("/png/bg-product.png")`, backgroundRepeat: 'no-repeat'}}
-        className={'w-full bg-blue-700 py-11 pl-20 gap-20 flex bg-cover items-center'}
+        className={cn('w-full bg-blue-700 py-11 pl-20 gap-20 flex bg-cover items-center',className)}
     >
         <div className={'flex flex-col items-start max-w-96'}>
             <div className={'text-white flex flex-col gap-12'}>
