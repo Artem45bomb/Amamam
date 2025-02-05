@@ -30,7 +30,7 @@ export default function ProductCard() {
 
         <div className="flex">
           <ProductImages listPathes={listPathes}/>
-          <DetailsProduct count={count} handleClickMinus={handleClickMinus} handleClickPlus={handleClickPlus} isHasChoose={false}/>
+          <DetailsProduct count={count} handleClickMinus={handleClickMinus} handleClickPlus={handleClickPlus} isHasChoose={true}/>
         </div>
 
 
