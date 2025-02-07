@@ -40,11 +40,11 @@ export default function ProductCard() {
           </div>
         </div>
 
-        <div className="mt-24 pl-20 pr-[90px]">
-          <p className="font-bold text-5xl font-nauryzRedKeds text-blue-700">ВАМ ПРИГОДИТЬСЯ</p>
+        <div className="mt-24 pl-11 pr-[60px] sm:pl-20 sm:pr-[90px]">
+          <p className="font-bold text-2xl sm:text-5xl font-nauryzRedKeds mb-14 text-blue-700">ВАМ ПРИГОДИТЬСЯ</p>
           <Recomendations/>
         </div>
-        <a href="#" className="block text-center text-primary text-xl font-nauryzRedKeds mt-[136px] mb-20 font-bold">
+        <a href="#" className="block text-center text-primary text-xl font-nauryzRedKeds mt-16 md:mt-[136px] mb-20 font-bold">
           СМОТРЕТЬ ВСЕ
         </a>
     </div>

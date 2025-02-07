@@ -24,7 +24,11 @@ export default {
       fontFamily:{
         nauryzRedKeds:["NauryzRedKeds","sans-serif"],
         gilroy:["Gilroy","sans-serif"]
+      },
+      screens:{
+        'xll': '1440px'
       }
+  
     },
   },
   plugins: [],
