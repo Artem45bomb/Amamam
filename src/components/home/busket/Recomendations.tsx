@@ -1,8 +1,8 @@
 import ItemRecomendations from "./ItemRecomendations";
 import { ItemRecomendationsProps } from "./ItemRecomendations";
 
-import { list1 } from "./data";
-import { list2 } from "./data";
+import { list1 } from "../../../app/data";
+import { list2 } from "../../../app/data";
 
 export interface RecomendationsProps {
     list:ItemRecomendationsProps[]

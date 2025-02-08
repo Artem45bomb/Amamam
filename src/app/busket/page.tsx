@@ -8,7 +8,7 @@ import ProductPath from "@/components/home/busket/ProductPath";
 import Recomendations from "@/components/home/busket/Recomendations";
 import { Icon } from "@/components/ui/assets/Icon/Icon";
 import { useState } from "react";
-import { list1 } from "@/components/home/busket/data";
+import { list1 } from "@/app/data";
 
 export default function ProductCard() {
   const [count, setCount] = useState(0)

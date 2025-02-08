@@ -1,4 +1,4 @@
-import { ItemRecomendationsProps } from "./ItemRecomendations";
+import { ItemRecomendationsProps } from "../components/home/busket/ItemRecomendations";
 
 export const list1: ItemRecomendationsProps[] = [
     {
