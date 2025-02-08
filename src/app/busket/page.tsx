@@ -8,7 +8,7 @@ import ProductPath from "@/components/home/busket/ProductPath";
 import Recomendations from "@/components/home/busket/Recomendations";
 import { Icon } from "@/components/ui/assets/Icon/Icon";
 import { useState } from "react";
-
+import { list1 } from "@/components/home/busket/data";
 
 export default function ProductCard() {
   const [count, setCount] = useState(0)
@@ -40,9 +40,9 @@ export default function ProductCard() {
           </div>
         </div>
 
-        <div className="mt-24 pl-11 pr-[60px] sm:pl-20 sm:pr-[90px]">
+        <div className="mt-24 px-11 sm:pl-20 sm:pr-[90px]">
           <p className="font-bold text-2xl sm:text-5xl font-nauryzRedKeds mb-14 text-blue-700">ВАМ ПРИГОДИТЬСЯ</p>
-          <Recomendations/>
+          <Recomendations list={list1}/>
         </div>
         <a href="#" className="block text-center text-primary text-xl font-nauryzRedKeds mt-16 md:mt-[136px] mb-20 font-bold">
           СМОТРЕТЬ ВСЕ
