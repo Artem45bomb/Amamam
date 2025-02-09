@@ -11,7 +11,7 @@ export const Header:FC = () => {
             <Link href={"/catalog"}>Каталог</Link>
             <Link href={"/news"}>Новинки</Link>
             <Link href={"/about"}>О нас</Link>
-            <Link href={"/delivery"}>Доставка</Link>
+            <Link href={"/payment-and-delivery"}>Доставка</Link>
         </ul>
        <Action/>
     </header>

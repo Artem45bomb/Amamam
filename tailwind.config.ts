@@ -9,6 +9,9 @@ export default {
   ],
   theme: {
     extend: {
+      fontSize: {
+        "sm": "0.75rem",
+      },
       colors: {
         background: "rgba(247, 247, 247, 1)",
         foreground: "var(--foreground)",
