@@ -1,21 +1,24 @@
-
 export enum InputType {
     Checkbox = 'checkbox',
     Radio = 'radio',
 
 }
 
-interface CheckRadioProps {
-    type: InputType,
-    id: string,
-    label: string,
+export interface CheckRadioProps {
+    type: InputType;
+    id: string;
+    label: string;
+    name: string;
+    onChange?: () => void; // Добавили onChange
 }
 
-export default function CheckRadio({type, id, label}:CheckRadioProps){
-    return(
-        <div className={`flex items-center cursor-pointer p-2 rounded hover:bg-gray-100 focus-within:border-2 focus-within:border-blue-500`}>
-            <input type={type} id={id} className={`opacity-0 absolute`}/>
-            <label htmlFor={id} className="text-black">{label}</label>
+export default function CheckRadio({ type, id, label, name, onChange }: CheckRadioProps) {
+    return (
+        <div className="flex text-secondary cursor-pointer">
+            <input type={type} id={id} className="peer hidden" name={name} onChange={onChange} />
+            <label htmlFor={id} className="cursor-pointer select-none px-7 py-3 border-2 font-gilroy text-sm font-medium border-secondary peer-checked:border-blue-700 peer-checked:text-blue-700">
+                {label}
+            </label>
         </div>
-    )
+    );
 }

@@ -8,7 +8,7 @@ import ProductPath from "@/components/home/busket/ProductPath";
 import Recomendations from "@/components/home/busket/Recomendations";
 import { Icon } from "@/components/ui/assets/Icon/Icon";
 import { useState } from "react";
-import { list1 } from "@/app/data";
+import { list1 } from "@/app/test";
 
 export default function ProductCard() {
   const [count, setCount] = useState(0)
@@ -34,13 +34,13 @@ export default function ProductCard() {
         </div>
 
 
-        <div className="px-20 mt-24">
+        <div className="mx-20 mt-24">
           <div className="flex justify-end">
             <DescribeProduct/>
           </div>
         </div>
 
-        <div className="mt-24 px-11 sm:pl-20 sm:pr-[90px]">
+        <div className="mt-24 mx-11 sm:ml-20 sm:mr-[90px]">
           <p className="font-bold text-2xl sm:text-5xl font-nauryzRedKeds mb-14 text-blue-700">ВАМ ПРИГОДИТЬСЯ</p>
           <Recomendations list={list1}/>
         </div>

@@ -1,3 +1,4 @@
+import { CheckRadioProps, InputType } from "@/components/home/busket/CheckRadio";
 import { ItemRecomendationsProps } from "../components/home/busket/ItemRecomendations";
 
 export const list1: ItemRecomendationsProps[] = [
@@ -200,3 +201,11 @@ export const list2: ItemRecomendationsProps[] = [
     },
 ];
 
+export const radioTest: CheckRadioProps[] = [
+    { type: InputType.Radio, id: "zavtraki", label: "Завтраки", name: "food" },
+    { type: InputType.Radio, id: "poldniki", label: "Полдники", name: "food" },
+    { type: InputType.Radio, id: "obedi", label: "Обеды", name: "food" },
+    { type: InputType.Radio, id: "bakaleya", label: "Бакалея", name: "food" },
+    { type: InputType.Radio, id: "maslo", label: "Масла", name: "food" },
+    { type: InputType.Radio, id: "sousi", label: "Соусы", name: "food" }
+];
