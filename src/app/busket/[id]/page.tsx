@@ -14,14 +14,6 @@ import { useSearchParams } from "next/navigation";
 
 export default function ProductCard() {
   const router = useRouter();
-  const searchParams = useSearchParams();
-
-    const imgPath = searchParams.get("imgPath");
-    const stars = searchParams.get("stars");
-    const price = searchParams.get("price");
-    const describe = searchParams.get("describe");
-    const type = searchParams.get("type");
-    const TagCard = searchParams.get("TagCard");
   const [count, setCount] = useState(0)
   const listPathes = ["/png/cookiesBusket.jpg", "/png/ChinaSoup.jpg", "/png/product1.png"]
 
@@ -37,7 +29,7 @@ export default function ProductCard() {
   return (
 
     <div className="">
-        <ProductPath path={`Каталог / Еда / Бакалея / ${describe}`}/>
+        <ProductPath path={`Каталог / Еда / Бакалея / Выпечка`}/>
 
         <div className="flex">
           <ProductImages listPathes={listPathes}/>

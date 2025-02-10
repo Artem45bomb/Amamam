@@ -45,12 +45,14 @@ export default function ItemRecomendations({ imgPath, imgHover, stars, price, de
     const searchParams = useSearchParams();
     const handleClick = () => {
         // Переход на динамическую страницу
-        router.push(`/busket/${id}?imgPath=${encodeURIComponent(imgPath)}&stars=${stars}&price=${price}&describe=${encodeURIComponent(describe)}&type=${type}&TagCard=${TagCard ?? ""}`);
+        router.push(`/busket/${id}`);
     };
 
     return (
-        <article className="text-black min-w-[250px] xl:max-w-[250px] xll:max-w-[2000px]" onClick={handleClick}>
-                <div className="relative h-[250px] overflow-hidden border border-blue-700">
+        <article className="text-black min-w-[250px] xl:max-w-[250px] xll:max-w-[2000px] cursor-pointer bg-white" onClick={handleClick}>
+                
+                <div className="relative flex h-[250px] border border-blue-700">
+                    
                     {TagCard!=undefined?<TagIconCard type={TagCard}/>:''}
                     {/* Основное изображение */}
                     <div
@@ -62,9 +64,16 @@ export default function ItemRecomendations({ imgPath, imgHover, stars, price, de
                         className="absolute inset-0 bg-center bg-cover transition-opacity duration-300 opacity-0 hover:opacity-100"
                         style={{ backgroundImage: `url(${imgHover})` }}
                     />
+                    <button className="absolute top-4 right-4" 
+                            onClick={(e) => {
+                                e.stopPropagation(); // Останавливаем всплытие события
+                                console.log("Лайк поставлен!");
+                            }}>
+                        <Icon className={`w-6`} alt={'like'} src={'/icon/heart-white.svg'}/>
+                    </button>
                 </div>
     
-                <div className="py-4 pr-4 pl-5 border-t-0 border border-blue-700">
+                <div className="py-4 pr-4 pl-5 border-t-0">
                     <div className="flex items-center">
                         <Icon className="size-4 mr-2" src={"/icon/Star.svg"} alt={"star"} />
                         <p className="text-[10px] font-gilroy font-normal">{stars}</p>
@@ -75,7 +84,10 @@ export default function ItemRecomendations({ imgPath, imgHover, stars, price, de
                             <p className="font-semibold text-xl">{price} BYN</p>
                             <p className="font-normal text-xs text-secondary">1 шт</p>
                         </div>
-                        <button>
+                        <button onClick={(e) => {
+                                e.stopPropagation(); // Останавливаем всплытие события
+                                console.log("В корзину добавлен!");
+                            }}>
                             <Icon className="w-7 h-7" src={"/icon/blueTelega.svg"} alt={"star"} />
                         </button>
                     </div>
