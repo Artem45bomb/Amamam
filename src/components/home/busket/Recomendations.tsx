@@ -1,8 +1,7 @@
-import ItemRecomendations from "./ItemRecomendations";
+import ItemRecomendations, { ProductType } from "./ItemRecomendations";
 import { ItemRecomendationsProps } from "./ItemRecomendations";
 
 import { list1 } from "../../../app/test";
-import { list2 } from "../../../app/test";
 
 export interface RecomendationsProps {
     list:ItemRecomendationsProps[]
@@ -20,7 +19,8 @@ export default function Recomendations({ list }: RecomendationsProps) {
                     stars={item.stars}
                     describe={item.describe}
                     price={item.price}
-                />
+                    TagCard={item.TagCard} 
+                    type={item.type}/>
             ))}
         </div>
     );

@@ -29,16 +29,19 @@ export interface ItemRecomendationsProps {
     describe: string;
     imgHover: string;
     type: ProductType
+    TagCard?: TagsCard
 }
 
 
 
 import { useState } from "react";
+import { TagIconCard } from "./TagIconCard";
 
-export default function ItemRecomendations({ imgPath, imgHover, stars, price, describe, type}: ItemRecomendationsProps) {
+export default function ItemRecomendations({ imgPath, imgHover, stars, price, describe, type, TagCard}: ItemRecomendationsProps) {
     return (
         <article className="text-black min-w-[250px] xl:max-w-[250px] xll:max-w-[2000px]">
                 <div className="relative h-[250px] overflow-hidden border border-blue-700">
+                    {TagCard!=undefined?<TagIconCard type={TagCard}/>:''}
                     {/* Основное изображение */}
                     <div
                         className="absolute inset-0 bg-center bg-cover transition-opacity duration-300 opacity-100 hover:opacity-0"

@@ -21,10 +21,10 @@ export default function Katalog(){
     };
 
     return(
-        <div>
+        <div className="w-full">
             <ProductPath path={`Главная / Каталог / ${selected}`}/>
             <h1 className="text-5xl font-nauryzRedKeds text-black mb-12 mx-20">{selected}</h1>
-            <fieldset className="flex gap-11 px-20 w-full overflow-hidden">
+            <fieldset className="flex gap-11 px-20 w-full overflow-x-scroll">
                 {radioTest.map(({ id, label, name, typeProduct }) => (
                     <CheckRadio 
                         key={id} 
