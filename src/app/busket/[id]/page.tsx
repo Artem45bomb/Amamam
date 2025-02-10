@@ -1,5 +1,6 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import DescribeProduct from "@/components/home/busket/DescribeProduct";
 import DetailsProduct from "@/components/home/busket/DetailsProduct";
 import MainInfoProduct from "@/components/home/busket/DetailsProduct";
@@ -9,8 +10,18 @@ import Recomendations from "@/components/home/busket/Recomendations";
 import { Icon } from "@/components/ui/assets/Icon/Icon";
 import { useState } from "react";
 import { list1 } from "@/app/test";
+import { useSearchParams } from "next/navigation";
 
 export default function ProductCard() {
+  const router = useRouter();
+  const searchParams = useSearchParams();
+
+    const imgPath = searchParams.get("imgPath");
+    const stars = searchParams.get("stars");
+    const price = searchParams.get("price");
+    const describe = searchParams.get("describe");
+    const type = searchParams.get("type");
+    const TagCard = searchParams.get("TagCard");
   const [count, setCount] = useState(0)
   const listPathes = ["/png/cookiesBusket.jpg", "/png/ChinaSoup.jpg", "/png/product1.png"]
 
@@ -22,11 +33,11 @@ export default function ProductCard() {
     setCount(count - 1)
   }
 
-
+  
   return (
 
     <div className="">
-        <ProductPath path='Каталог / Еда / Бакалея / Выпечка'/>
+        <ProductPath path={`Каталог / Еда / Бакалея / ${describe}`}/>
 
         <div className="flex">
           <ProductImages listPathes={listPathes}/>

@@ -1,5 +1,9 @@
+"use client";
+
 import ItemRecomendations, { ProductType } from "./ItemRecomendations";
 import { ItemRecomendationsProps } from "./ItemRecomendations";
+// import dynamic from "next/dynamic";
+// const ItemRecomendations = dynamic(() => import("./ItemRecomendations"), { ssr: false });
 
 import { list1 } from "../../../app/test";
 
@@ -13,14 +17,14 @@ export default function Recomendations({ list }: RecomendationsProps) {
         <div className="grid xl:grid-cols-4 gap-x-[90px] md:grid-cols-2 gap-y-14">
             {list.map((item) => (
                 <ItemRecomendations
-                    key={item.key}
+                    key={item.id}
                     imgPath={item.imgPath}
                     imgHover={item.imgHover}
                     stars={item.stars}
                     describe={item.describe}
                     price={item.price}
-                    TagCard={item.TagCard} 
-                    type={item.type}/>
+                    TagCard={item.TagCard}
+                    type={item.type} id={item.id}/>
             ))}
         </div>
     );

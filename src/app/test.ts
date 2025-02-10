@@ -3,7 +3,7 @@ import { ItemRecomendationsProps, ProductType, TagsCard } from "../components/ho
 
 export const list1: ItemRecomendationsProps[] = [
     {
-        key: 1,
+        id: 1,
         imgPath: "/png/product1.png",
         imgHover: "/png/potato.png",
         stars: 4.5,
@@ -13,7 +13,7 @@ export const list1: ItemRecomendationsProps[] = [
         TagCard: TagsCard.New,
     },
     {
-        key: 2,
+        id: 2,
         imgPath: "/png/product2.png",
         imgHover: "/png/instagram2.png",
         stars: 5,
@@ -23,7 +23,7 @@ export const list1: ItemRecomendationsProps[] = [
         TagCard: TagsCard.Bestseller,
     },
     {
-        key: 3,
+        id: 3,
         imgPath: "/png/product3.png",
         imgHover: "/png/dog.png",
         stars: 3.8,
@@ -33,7 +33,7 @@ export const list1: ItemRecomendationsProps[] = [
         TagCard: TagsCard.Percent,
     },
     {
-        key: 4,
+        id: 4,
         imgPath: "/png/product4.png",
         imgHover: "/png/cookiesBusket.jpg",
         stars: 4.2,
@@ -42,7 +42,7 @@ export const list1: ItemRecomendationsProps[] = [
         type: ProductType.Grocery,
     },
     {
-        key: 5,
+        id: 5,
         imgPath: "/png/product5.png",
         imgHover: "/png/ChinaSoup.jpg",
         stars: 4.7,
@@ -52,7 +52,7 @@ export const list1: ItemRecomendationsProps[] = [
         TagCard: TagsCard.New,
     },
     {
-        key: 6,
+        id: 6,
         imgPath: "/png/ChinaSoup.jpg",
         imgHover: "/png/product5.png",
         stars: 4.7,
@@ -62,7 +62,7 @@ export const list1: ItemRecomendationsProps[] = [
         TagCard: TagsCard.Bestseller,
     },
     {
-        key: 7,
+        id: 7,
         imgPath: "/png/cookiesBusket.jpg",
         imgHover: "/png/product4.png",
         stars: 4.7,
@@ -71,7 +71,7 @@ export const list1: ItemRecomendationsProps[] = [
         type: ProductType.Breakfast,
     },
     {
-        key: 8,
+        id: 8,
         imgPath: "/png/dog.png",
         imgHover: "/png/product3.png",
         stars: 4.7,
@@ -81,7 +81,7 @@ export const list1: ItemRecomendationsProps[] = [
         TagCard: TagsCard.Percent,
     },
     {
-        key: 9,
+        id: 9,
         imgPath: "/png/instagram2.png",
         imgHover: "/png/product2.png",
         stars: 4.7,
@@ -90,7 +90,7 @@ export const list1: ItemRecomendationsProps[] = [
         type: ProductType.Launch,
     },
     {
-        key: 10,
+        id: 10,
         imgPath: "/png/potato.png",
         imgHover: "/png/product1.png",
         stars: 4.7,
@@ -100,7 +100,7 @@ export const list1: ItemRecomendationsProps[] = [
         TagCard: TagsCard.New,
     },
     {
-        key: 11,
+        id: 11,
         imgPath: "/png/product1.png",
         imgHover: "/png/potato.png",
         stars: 3.9,
@@ -109,7 +109,7 @@ export const list1: ItemRecomendationsProps[] = [
         type: ProductType.Oil,
     },
     {
-        key: 12,
+        id: 12,
         imgPath: "/png/product2.png",
         imgHover: "/png/instagram2.png",
         stars: 5,
@@ -119,7 +119,7 @@ export const list1: ItemRecomendationsProps[] = [
         TagCard: TagsCard.Bestseller,
     },
     {
-        key: 13,
+        id: 13,
         imgPath: "/png/product3.png",
         imgHover: "/png/dog.png",
         stars: 4.2,
@@ -128,7 +128,7 @@ export const list1: ItemRecomendationsProps[] = [
         type: ProductType.Breakfast,
     },
     {
-        key: 14,
+        id: 14,
         imgPath: "/png/product4.png",
         imgHover: "/png/cookiesBusket.jpg",
         stars: 4.6,
@@ -138,7 +138,7 @@ export const list1: ItemRecomendationsProps[] = [
         TagCard: TagsCard.Percent,
     },
     {
-        key: 15,
+        id: 15,
         imgPath: "/png/product5.png",
         imgHover: "/png/ChinaSoup.jpg",
         stars: 4.8,
@@ -147,7 +147,7 @@ export const list1: ItemRecomendationsProps[] = [
         type: ProductType.Launch,
     },
     {
-        key: 16,
+        id: 16,
         imgPath: "/png/ChinaSoup.jpg",
         imgHover: "/png/product5.png",
         stars: 4.1,
@@ -156,7 +156,7 @@ export const list1: ItemRecomendationsProps[] = [
         type: ProductType.Grocery,
     },
     {
-        key: 17,
+        id: 17,
         imgPath: "/png/cookiesBusket.jpg",
         imgHover: "/png/product4.png",
         stars: 4.3,
@@ -166,7 +166,7 @@ export const list1: ItemRecomendationsProps[] = [
         TagCard: TagsCard.New,
     },
     {
-        key: 18,
+        id: 18,
         imgPath: "/png/dog.png",
         imgHover: "/png/product3.png",
         stars: 4.0,
@@ -175,7 +175,7 @@ export const list1: ItemRecomendationsProps[] = [
         type: ProductType.Sous,
     },
     {
-        key: 19,
+        id: 19,
         imgPath: "/png/instagram2.png",
         imgHover: "/png/product2.png",
         stars: 3.5,
@@ -185,7 +185,7 @@ export const list1: ItemRecomendationsProps[] = [
         TagCard: TagsCard.Bestseller,
     },
     {
-        key: 20,
+        id: 20,
         imgPath: "/png/potato.png",
         imgHover: "/png/product1.png",
         stars: 4.9,
@@ -194,7 +194,7 @@ export const list1: ItemRecomendationsProps[] = [
         type: ProductType.PostLaunch,
     },
     {
-        key: 21,
+        id: 21,
         imgPath: "/png/product1.png",
         imgHover: "/png/potato.png",
         stars: 4.3,
@@ -204,7 +204,7 @@ export const list1: ItemRecomendationsProps[] = [
         TagCard: TagsCard.Percent,
     },
     {
-        key: 22,
+        id: 22,
         imgPath: "/png/product2.png",
         imgHover: "/png/instagram2.png",
         stars: 4.6,
@@ -213,7 +213,7 @@ export const list1: ItemRecomendationsProps[] = [
         type: ProductType.Breakfast,
     },
     {
-        key: 23,
+        id: 23,
         imgPath: "/png/product3.png",
         imgHover: "/png/dog.png",
         stars: 4.8,
@@ -222,7 +222,7 @@ export const list1: ItemRecomendationsProps[] = [
         type: ProductType.Grocery,
     },
     {
-        key: 24,
+        id: 24,
         imgPath: "/png/product4.png",
         imgHover: "/png/cookiesBusket.jpg",
         stars: 4.1,
@@ -232,7 +232,7 @@ export const list1: ItemRecomendationsProps[] = [
         TagCard: TagsCard.New,
     },
     {
-        key: 25,
+        id: 25,
         imgPath: "/png/product5.png",
         imgHover: "/png/ChinaSoup.jpg",
         stars: 4.9,
@@ -241,7 +241,7 @@ export const list1: ItemRecomendationsProps[] = [
         type: ProductType.Sous,
     },
     {
-        key: 26,
+        id: 26,
         imgPath: "/png/ChinaSoup.jpg",
         imgHover: "/png/product5.png",
         stars: 4.5,
@@ -251,7 +251,7 @@ export const list1: ItemRecomendationsProps[] = [
         TagCard: TagsCard.Bestseller,
     },
     {
-        key: 27,
+        id: 27,
         imgPath: "/png/cookiesBusket.jpg",
         imgHover: "/png/product4.png",
         stars: 4.0,
@@ -260,7 +260,7 @@ export const list1: ItemRecomendationsProps[] = [
         type: ProductType.PostLaunch,
     },
     {
-        key: 28,
+        id: 28,
         imgPath: "/png/dog.png",
         imgHover: "/png/product3.png",
         stars: 4.3,
@@ -269,7 +269,7 @@ export const list1: ItemRecomendationsProps[] = [
         type: ProductType.Breakfast,
     },
     {
-        key: 29,
+        id: 29,
         imgPath: "/png/instagram2.png",
         imgHover: "/png/product2.png",
         stars: 3.9,
@@ -279,7 +279,7 @@ export const list1: ItemRecomendationsProps[] = [
         TagCard: TagsCard.Percent,
     },
     {
-        key: 30,
+        id: 30,
         imgPath: "/png/potato.png",
         imgHover: "/png/product1.png",
         stars: 5.0,
@@ -288,7 +288,7 @@ export const list1: ItemRecomendationsProps[] = [
         type: ProductType.Oil,
     },
     {
-        key: 31,
+        id: 31,
         imgPath: "/png/product1.png",
         imgHover: "/png/potato.png",
         stars: 4.4,
@@ -297,7 +297,7 @@ export const list1: ItemRecomendationsProps[] = [
         type: ProductType.Sous,
     },
     {
-        key: 32,
+        id: 32,
         imgPath: "/png/product2.png",
         imgHover: "/png/instagram2.png",
         stars: 4.7,
@@ -307,7 +307,7 @@ export const list1: ItemRecomendationsProps[] = [
         TagCard: TagsCard.New,
     },
     {
-        key: 33,
+        id: 33,
         imgPath: "/png/product3.png",
         imgHover: "/png/dog.png",
         stars: 4.2,
@@ -316,7 +316,7 @@ export const list1: ItemRecomendationsProps[] = [
         type: ProductType.PostLaunch,
     },
     {
-        key: 34,
+        id: 34,
         imgPath: "/png/product4.png",
         imgHover: "/png/cookiesBusket.jpg",
         stars: 4.9,
@@ -325,7 +325,7 @@ export const list1: ItemRecomendationsProps[] = [
         type: ProductType.Breakfast,
     },
     {
-        key: 35,
+        id: 35,
         imgPath: "/png/product5.png",
         imgHover: "/png/ChinaSoup.jpg",
         stars: 4.6,
@@ -335,7 +335,7 @@ export const list1: ItemRecomendationsProps[] = [
         TagCard: TagsCard.Bestseller,
     },
     {
-        key: 36,
+        id: 36,
         imgPath: "/png/ChinaSoup.jpg",
         imgHover: "/png/product5.png",
         stars: 4.0,
@@ -344,7 +344,7 @@ export const list1: ItemRecomendationsProps[] = [
         type: ProductType.Oil,
     },
     {
-        key: 37,
+        id: 37,
         imgPath: "/png/cookiesBusket.jpg",
         imgHover: "/png/product4.png",
         stars: 4.5,
@@ -353,7 +353,7 @@ export const list1: ItemRecomendationsProps[] = [
         type: ProductType.Sous,
     },
     {
-        key: 38,
+        id: 38,
         imgPath: "/png/dog.png",
         imgHover: "/png/product3.png",
         stars: 4.8,
@@ -363,7 +363,7 @@ export const list1: ItemRecomendationsProps[] = [
         TagCard: TagsCard.Percent,
     },
     {
-        key: 39,
+        id: 39,
         imgPath: "/png/instagram2.png",
         imgHover: "/png/product2.png",
         stars: 3.7,
@@ -372,7 +372,7 @@ export const list1: ItemRecomendationsProps[] = [
         type: ProductType.PostLaunch,
     },
     {
-        key: 40,
+        id: 40,
         imgPath: "/png/potato.png",
         imgHover: "/png/product1.png",
         stars: 4.9,

@@ -1,3 +1,6 @@
+"use client";
+
+import { useRouter, useSearchParams } from "next/navigation";
 import { Icon } from "@/components/ui/assets/Icon/Icon"
 import { cn } from "@/utils/style"
 
@@ -22,7 +25,7 @@ export enum TagsCard{
 }
 
 export interface ItemRecomendationsProps {
-    key: number; // Добавил key
+    id: number;
     imgPath: string;
     stars: number;
     price: number;
@@ -37,9 +40,16 @@ export interface ItemRecomendationsProps {
 import { useState } from "react";
 import { TagIconCard } from "./TagIconCard";
 
-export default function ItemRecomendations({ imgPath, imgHover, stars, price, describe, type, TagCard}: ItemRecomendationsProps) {
+export default function ItemRecomendations({ imgPath, imgHover, stars, price, describe, type, TagCard, id}: ItemRecomendationsProps) {
+    const router = useRouter();
+    const searchParams = useSearchParams();
+    const handleClick = () => {
+        // Переход на динамическую страницу
+        router.push(`/busket/${id}?imgPath=${encodeURIComponent(imgPath)}&stars=${stars}&price=${price}&describe=${encodeURIComponent(describe)}&type=${type}&TagCard=${TagCard ?? ""}`);
+    };
+
     return (
-        <article className="text-black min-w-[250px] xl:max-w-[250px] xll:max-w-[2000px]">
+        <article className="text-black min-w-[250px] xl:max-w-[250px] xll:max-w-[2000px]" onClick={handleClick}>
                 <div className="relative h-[250px] overflow-hidden border border-blue-700">
                     {TagCard!=undefined?<TagIconCard type={TagCard}/>:''}
                     {/* Основное изображение */}
