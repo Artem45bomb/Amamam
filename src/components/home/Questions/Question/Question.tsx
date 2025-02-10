@@ -20,4 +20,5 @@ export const Question: FC<Props> = ({title, text}) => {
         </div>
         <p className={cn("font-normal text-[1.1rem] transition-all", active ? "" : "opacity-0 h-0 text-[0rem]")}>{text}</p>
     </div>
+
 }

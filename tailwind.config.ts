@@ -9,10 +9,14 @@ export default {
   ],
   theme: {
     extend: {
+      fontSize: {
+        "sm": "0.75rem",
+      },
       colors: {
         background: "rgba(247, 247, 247, 1)",
         foreground: "var(--foreground)",
         primary:"rgba(9, 18, 48, 1)",
+        grey: "#9F9F9F",
         secondary:"rgba(159, 159, 159, 1)",
       },
       minWidth:{
