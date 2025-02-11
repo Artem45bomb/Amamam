@@ -1,7 +1,13 @@
 import { CheckRadioProps, InputType } from "@/components/home/busket/CheckRadio";
 import { ItemRecomendationsProps, ProductType, TagsCard } from "../components/home/busket/ItemRecomendations";
 
-
+export interface nutritionalValueInt {
+    protein: number,
+    fats: number,
+    carbohydrates: number
+    vitamins?: string,
+    minerals?: string
+}
 
 export interface mokeListInt{
     id: number,
@@ -14,13 +20,7 @@ export interface mokeListInt{
     price: number,
     imgs: string[],
     describe: string,
-    nutritionalValue: {
-        protein: number,
-        fats: number,
-        carbohydrates: number
-        vitamins?: string,
-        minerals?: string
-    },
+    nutritionalValue:nutritionalValueInt,
     energyValue: number
 }
 

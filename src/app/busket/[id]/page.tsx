@@ -45,7 +45,7 @@ export default function ProductCard() {
 
         <div className="mx-20 mt-24">
           <div className="flex justify-end">
-            <DescribeProduct/>
+            <DescribeProduct name={mainProduct?.name} id={mainProduct?.id} describe={mainProduct?.describe} energyValue={mainProduct?.energyValue} nutritionalValue={mainProduct?.nutritionalValue}/>
           </div>
         </div>
 
