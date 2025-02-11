@@ -10,23 +10,18 @@ interface MainInfoProductProps {
   weight:number|undefined,
   ingredients: string|undefined,
   stars: number|undefined,
+  handleClick: ()=>void,
+  count: number,
+  handleClickPlus: ()=>void,
+  handleClickMinus: ()=>void,
 }
 
-export default function DetailsProduct({isHasChoose, price, name, id, countProd, weight, ingredients, stars}:MainInfoProductProps) {
+export default function DetailsProduct({isHasChoose, price, name, id, countProd, weight, ingredients, stars, handleClick, count, handleClickMinus, handleClickPlus}:MainInfoProductProps) {
   const [isChoose1Active, setIsChoose1Active] = useState(false)
   const [isChoose2Active, setIsChoose2Active] = useState(false)
   const chooseActive = 'border-blue-700 text-blue-700'
   const chooseNotActive = 'border-secondary text-secondary'
-  const [count, setCount] = useState(0)
-
-
-  const handleClickPlus = () => {
-    setCount(count+1);
-  };
   
-  const handleClickMinus = () => {
-    setCount(count - 1)
-  }
 
   const handleClickChoose1 =()=>{
     isChoose1Active ? setIsChoose1Active(false): setIsChoose1Active(true)
@@ -78,7 +73,7 @@ export default function DetailsProduct({isHasChoose, price, name, id, countProd,
                         </button>
                       )}
                       {count > 0 && (
-                        <button className="border border-blue-700 flex justify-center items-center size-12 ml-6">
+                        <button className="border border-blue-700 flex justify-center items-center size-12 ml-6" onClick={handleClick}>
                         <Icon className="size-7" src={"/icon/shopping-cart.svg"} alt={"shopping-cart"}/>
                       </button>
                       )}

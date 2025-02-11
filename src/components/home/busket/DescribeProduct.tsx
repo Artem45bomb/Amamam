@@ -9,6 +9,7 @@ export interface TabsProps{
   describe: string|undefined,
   energyValue: number|undefined,
   nutritionalValue: nutritionalValueInt|undefined
+  
 }
 
 const tabsNames = [
