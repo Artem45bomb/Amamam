@@ -4,27 +4,37 @@ import CheckRadio from "@/components/home/busket/CheckRadio";
 import ProductPath from "@/components/home/busket/ProductPath";
 import { InputType } from "@/components/home/busket/CheckRadio";
 import { useState } from "react";
-import { list1, radioTest } from "../test";
+import { list1, radioTest } from "../../test";
 import { Icon } from "@/components/ui/assets/Icon/Icon";
 import Recomendations from "@/components/home/busket/Recomendations";
 import { ProductType } from "@/components/home/busket/ItemRecomendations";
+import { useParams, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 
-export default function Katalog(){
-    const [selected, setSelected] = useState("Бакалея");
-    const [chooseTypeProduct, setChooseTypeProduct] = useState(ProductType.Grocery)
+export default function CatalogType(){
+    const router = useRouter();
+
+    let params = useParams<{type:string}>()
+    const decodeParams = decodeURIComponent(params.type)
+    // const searchParams = useSearchParams();
+    // const params = searchParams.get('')
+
+    const [selected, setSelected] = useState(decodeParams);
+    const [chooseTypeProduct, setChooseTypeProduct] = useState(decodeParams)
     const [isOpen, setIsOpen] = useState(false);
 
     const handleChange = (label: string, productType: ProductType) => {
         setSelected(label);
         setChooseTypeProduct(productType)
+        router.replace(`/catalog/${[label]}`)
     };
 
     return(
         <div className="w-full">
             <ProductPath path={`Главная / Каталог / ${selected}`}/>
             <h1 className="text-5xl font-nauryzRedKeds text-black mb-12 mx-20">{selected}</h1>
-            <fieldset className="flex gap-11 px-20">
+            <fieldset className="flex gap-11 px-20 w-full overflow-x-scroll">
                 {radioTest.map(({ id, label, name, typeProduct }) => (
                     <CheckRadio 
                         key={id} 
