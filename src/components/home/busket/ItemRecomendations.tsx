@@ -10,12 +10,12 @@ enum TypeOfBorder {
 }
 
 export enum ProductType {
-    Breakfast,
-    PostLaunch,
-    Launch,
-    Grocery,
-    Oil,
-    Sous
+    Breakfast = "Завтраки",
+    PostLaunch = "Полдники",
+    Launch = "Обеды",
+    Grocery = "Бакалея",
+    Oil = "Масла",
+    Sous = "Соусы"
 }
 
 export enum TagsCard{

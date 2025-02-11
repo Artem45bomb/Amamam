@@ -1,6 +1,39 @@
 import { CheckRadioProps, InputType } from "@/components/home/busket/CheckRadio";
 import { ItemRecomendationsProps, ProductType, TagsCard } from "../components/home/busket/ItemRecomendations";
 
+
+
+export interface mokeListInt{
+    id: number,
+    typeProduct: ProductType
+    name: string,
+    countProduct: number,
+    weight: number,
+    ingredients: string,
+    stars: number,
+    price: number,
+    imgs: string[],
+    describe: string,
+    nutritionalValue: {
+        protein: number,
+        fats: number,
+        carbohydrates: number
+        vitamins?: string,
+        minerals?: string
+    },
+    energyValue: number
+}
+
+
+export const mokeList = [
+    {
+        id: 1,
+        typeProduct: ProductType.Breakfast,
+        name: "Печенье заварное 'Ракушка' с шоколадной начинкой."
+        
+    }
+]
+
 export const list1: ItemRecomendationsProps[] = [
     {
         id: 1,

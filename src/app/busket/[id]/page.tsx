@@ -1,6 +1,6 @@
 "use client";
 
-import { useRouter } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import DescribeProduct from "@/components/home/busket/DescribeProduct";
 import DetailsProduct from "@/components/home/busket/DetailsProduct";
 import MainInfoProduct from "@/components/home/busket/DetailsProduct";
@@ -11,10 +11,15 @@ import { Icon } from "@/components/ui/assets/Icon/Icon";
 import { useState } from "react";
 import { list1 } from "@/app/test";
 import { useSearchParams } from "next/navigation";
+import { log } from "console";
+
+
 
 export default function ProductCard() {
   const router = useRouter();
   const [count, setCount] = useState(0)
+  const params = useParams<{id:string}>()
+  
   const listPathes = ["/png/cookiesBusket.jpg", "/png/ChinaSoup.jpg", "/png/product1.png"]
 
   const handleClickPlus = () => {
