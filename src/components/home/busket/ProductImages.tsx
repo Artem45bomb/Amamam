@@ -2,7 +2,7 @@ import { Icon } from "@/components/ui/assets/Icon/Icon"
 import { useState } from "react"
 
 interface ProductImagesProps{
-    listPathes: string[],
+    listPathes: string[]|undefined,
 }
 
 export default function ProductImages({listPathes}:ProductImagesProps) {
@@ -23,12 +23,12 @@ export default function ProductImages({listPathes}:ProductImagesProps) {
       }
 
     return(
-        <div className="bg-cover bg-center px-20 py-4 flex" style={{backgroundImage:`url(${listPathes[numImage-1]})`, height: 582, flexGrow:1}}>
+        <div className="bg-cover bg-center px-20 py-4 flex" style={{backgroundImage:`url(${listPathes!=undefined?listPathes[numImage-1]:""})`, height: 582, flexGrow:1}}>
             <div className="flex flex-col items-center justify-between">
                 <button onClick={handleClickImagePrevious}><Icon className="size-6" src={'/icon/arrow-up.svg'} alt="arrow-up"/></button>
-                <button onClick={()=>{setNumImage(1)}} className={`size-[136px] bg-cover bg-center ${numImage==1 ? "border-[3px]": "border"} border-blue-700`} style={{backgroundImage:`url("/png/cookiesBusket.jpg")`}}></button>
-                <button onClick={()=>{setNumImage(2)}} className={`size-[136px] bg-cover bg-center ${numImage==2 ? "border-[3px]": "border"} border-blue-700`} style={{backgroundImage:`url("/png/ChinaSoup.jpg")`}}></button>
-                <button onClick={()=>{setNumImage(3)}} className={`size-[136px] bg-cover bg-center ${numImage==3 ? "border-[3px]": "border"} border-blue-700`} style={{backgroundImage:`url("/png/product1.png")`}}></button>
+                <button onClick={()=>{setNumImage(1)}} className={`size-[136px] bg-cover bg-center ${numImage==1 ? "border-[3px]": "border"} border-blue-700`} style={{backgroundImage:`url("${listPathes!=undefined?listPathes[0]:""}")`}}></button>
+                <button onClick={()=>{setNumImage(2)}} className={`size-[136px] bg-cover bg-center ${numImage==2 ? "border-[3px]": "border"} border-blue-700`} style={{backgroundImage:`url("${listPathes!=undefined?listPathes[1]:""}")`}}></button>
+                <button onClick={()=>{setNumImage(3)}} className={`size-[136px] bg-cover bg-center ${numImage==3 ? "border-[3px]": "border"} border-blue-700`} style={{backgroundImage:`url("${listPathes!=undefined?listPathes[2]:""}")`}}></button>
                 <button onClick={handleClickImageNext}><Icon className="size-6" src={'/icon/arrow-down.svg'} alt="arrow-down"/></button>
             </div>
         </div>

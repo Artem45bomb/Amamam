@@ -7,8 +7,7 @@ interface TabProps {
 const tabs: TabProps[] = [
   { name: "Описание" },
   { name: "Пищевая ценность" },
-  { name: "Энергетическая ценность" },
-  { name: "Состав продукта" },
+  { name: "Энергетическая ценность" }
 ];
 
 const Tabs: React.FC = () => {
@@ -36,7 +35,9 @@ const Tabs: React.FC = () => {
           }}
         />
       </div>
-      <div className="p-4 text-gray-700">Содержимое: {activeTab}</div>
+      <div className="p-4 text-gray-700">
+        {/* {activeTab == tabs[0]? describe: activeTab == tabs[1]? } */}
+      </div>
     </div>
   );
 };

@@ -13,32 +13,33 @@ import { list1 } from "@/app/test";
 import { useSearchParams } from "next/navigation";
 import { log } from "console";
 
-
+import { mokeList } from "@/app/test";
 
 export default function ProductCard() {
   const router = useRouter();
-  const [count, setCount] = useState(0)
-  const params = useParams<{id:string}>()
   
+  const params = useParams<{id:string}>()
   const listPathes = ["/png/cookiesBusket.jpg", "/png/ChinaSoup.jpg", "/png/product1.png"]
 
-  const handleClickPlus = () => {
-    setCount(count+1);
-  };
-
-  const handleClickMinus = () => {
-    setCount(count - 1)
-  }
-
+  const mainProduct = mokeList.find((e)=>e.id.toString() == params.id)
   
   return (
 
     <div className="">
-        <ProductPath path={`Каталог / Еда / Бакалея / Выпечка`}/>
+        <ProductPath path={`Каталог / Еда / ${mainProduct?.typeProduct} / ${mainProduct?.name}`}/>
 
         <div className="flex">
-          <ProductImages listPathes={listPathes}/>
-          <DetailsProduct count={count} handleClickMinus={handleClickMinus} handleClickPlus={handleClickPlus} isHasChoose={true}/>
+          <ProductImages listPathes={mainProduct?.imgs}/>
+          <DetailsProduct 
+            id={mainProduct?.id}
+            isHasChoose={true} 
+            price={mainProduct?.price} 
+            name={mainProduct?.name}
+            countProd={mainProduct?.countProduct}
+            weight={mainProduct?.weight}
+            ingredients={mainProduct?.ingredients}
+            stars={mainProduct?.stars}
+          />
         </div>
 
 
