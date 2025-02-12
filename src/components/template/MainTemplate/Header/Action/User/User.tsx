@@ -50,7 +50,7 @@ export const UserAction = () => {
         {show && status !== "authenticated" && <div className={"fixed bg-[#9F9F9F] bg-opacity-50 z-20 top-0 left-0 w-full h-full"}> </div>}
         {show && status !=="authenticated" &&  <div className="fixed z-30 w-full h-full top-0 left-0">
             <div className="bg-white border-l border-l-blue-700 w-3/4 h-full ml-auto text-black">
-                <div className="flex flex-col h-full pt-[12%] pb-[9%] justify-between pl-[22%] pr-14 gap-2">
+                <div className="flex flex-col h-full pt-[6%] md:pt-[9%] xl:pt-[12%] pb-[4.5%] md:pb-[6%] xl:pb-[9%] justify-between pl-[11%] md:pl-[17%] xl:pl-[22%] pr-7 md:pr-9 xl:pr-14 gap-2">
                     <div className={"flex flex-col gap-14 h-full w-full"}>
                         <button className="relative w-7 h-7 ml-auto" onClick={handleClose}>
                             <Image fill src={"/icon/x.svg"} alt={"close login"}/>
