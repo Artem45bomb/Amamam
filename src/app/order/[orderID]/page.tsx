@@ -5,8 +5,10 @@ import { useParams } from "next/navigation";
 import { useState } from "react";
 
 import { mokeList } from "@/app/test";
+import { useRouter } from "next/navigation";
 
 export default function Order(){
+    const router = useRouter()
     const [contacts, setContacts]= useState(false)
     const [delivery, setDelivery]= useState(false)
     const [payment, setPayment] = useState(false)
@@ -38,7 +40,7 @@ export default function Order(){
     const mainProduct = mokeList.find((e)=> e.id == parseSesData.id)
     return (
         <div>
-            <button className="ml-20 mt-9 mb-14"><Icon src={'/icon/arrow-down.svg'} alt="back" className="w-6 h-6 rotate-90"/></button>
+            <button className="ml-20 mt-9 mb-14"><Icon src={'/icon/arrow-down.svg'} alt="back" className="w-6 h-6 rotate-90" onClick={()=> router.back()}/></button>
 
             <div className="flex gap-52 ml-28 mr-16">
                 <div className="w-[590px]">
@@ -47,7 +49,7 @@ export default function Order(){
                         <div className="ml-24">
                             <button className="flex justify-between items-center w-full" onClick={handleClickContacts}>
                                 <p className="font-medium text-3xl font-gilroy text-primary">контактные данные</p>
-                                <Icon src={'/icon/arrow-down.svg'} alt="back" className="w-6 h-6"/>
+                                <Icon src={'/icon/arrow-down.svg'} alt="back" className="w-6 h-6" />
                             </button>
                             <div className={`${contacts?'hidden':''} mt-5`}>
                                 <p className="text-secondary text-xs font-gilroy mb-10">ввести данные</p>
