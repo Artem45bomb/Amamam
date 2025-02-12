@@ -12,6 +12,7 @@ import { useState } from "react";
 import { list1 } from "@/app/test";
 import { useSearchParams } from "next/navigation";
 import { log } from "console";
+import {v4 as uuidv4} from 'uuid'
 
 import { mokeList } from "@/app/test";
 
@@ -44,6 +45,10 @@ export default function ProductCard() {
   }
 
   function handleMakeOrder(){
+    const orderID = uuidv4()
+    const sesObj = {id: mainProduct?.id, count}
+    sessionStorage.setItem(orderID, JSON.stringify(sesObj))
+    router.push(`/order/${orderID}`);
     
   }
 
@@ -96,7 +101,7 @@ export default function ProductCard() {
             <p className=" text-xl">ИТОГО</p>
             <p className="text-4xl">{mainProduct!==undefined?mainProduct?.price*count:''} BYN</p>
           </div>
-          <button className="flex mt-14 justify-center w-full bg-blue-700 items-center py-3 text-xl font-bold text-white">ОФОРМИТЬ ЗАКАЗ</button>
+          <button className="flex mt-14 justify-center w-full bg-blue-700 items-center py-3 text-xl font-bold text-white" onClick={handleMakeOrder}>ОФОРМИТЬ ЗАКАЗ</button>
 
           <p className="mt-20 mb-12 font-nauryzRedKeds text-4xl text-blue-700">добавте пряностей</p>
           <Recomendations list={list1.slice(0,3)}/>
