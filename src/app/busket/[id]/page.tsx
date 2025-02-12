@@ -16,6 +16,8 @@ import { log } from "console";
 import { mokeList } from "@/app/test";
 
 export default function ProductCard() {
+
+
   const router = useRouter();
   
   const params = useParams<{id:string}>()
@@ -40,6 +42,11 @@ export default function ProductCard() {
   const handleClickMinus = () => {
     if (count > 0 ) setCount(count - 1)
   }
+
+  function handleMakeOrder(){
+    
+  }
+
   return (
 
     <div className="">
