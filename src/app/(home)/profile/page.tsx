@@ -9,6 +9,7 @@ import {Section, SectionInfo} from "@/components/profile/sections/types";
 export default function Profile(){
     const {data} = useGetUserProfileQuery();
     const [section,setSection] = useState(Section.Form);
+    const [order,setOrder] = useState<string>();
     const updateProfile = useUpdateProfile()
 
     const handleSubmit = useCallback<FormEventHandler<HTMLFormElement>>(
@@ -41,6 +42,14 @@ export default function Profile(){
 
     const handleChangeSection = (section:Section) => {
         setSection(section)
+        if(section === Section.Order && section !== Section.Order)
+            setOrder(undefined);
+    }
+
+    const handleChangeOrderView = (orderId:string) => {
+        console.log(orderId);
+        setOrder(orderId);
+        setSection(Section.Order);
     }
 
     const SectionView = useMemo(()=>SectionInfo[section],[section])
@@ -49,8 +58,8 @@ export default function Profile(){
         return null
 
 
-    return <form className="flex gap-28 text-black py-24 pl-14 text-left" onSubmit={handleSubmit}>
+    return <form className="flex sm:gap-10 md:gap-20 xl:gap-28 text-black py-24 pl-14 text-left" onSubmit={handleSubmit}>
         <SectionUser {...data} onChange={handleChangeSection} currentSection={section}/>
-        <SectionView {...data} onChange={handleChangeSection} />
+        <SectionView onChangeOrderView={handleChangeOrderView} orderId={order ?? ''} {...data} onChange={handleChangeSection} />
     </form>
 }

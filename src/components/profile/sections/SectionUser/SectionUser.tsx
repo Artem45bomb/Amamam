@@ -46,7 +46,7 @@ export const SectionUser:FC<Props> = ({onChange,currentSection,...data}) =>{
                 </button>
             </div>
             <ul className={"flex flex-col gap-5 items-end text-3xl"}>
-                <button type={"button"} className={cn(currentSection === Section.Orders ? "text-blue-700" : "")} onChange={() => onChange(Section.Orders)}>Мои покупки</button>
+                <button type={"button"} className={cn(currentSection === Section.Orders ? "text-blue-700" : "")} onClick={() => onChange(Section.Orders)}>Мои покупки</button>
                 <button type={"button"} className={cn(currentSection === Section.Wishlist ? "text-blue-700" : "")} onClick={() => onChange(Section.Wishlist)}>Wishlist</button>
             </ul>
             <ul className={"flex flex-col gap-5 items-end text-left text-xl font-medium"}>

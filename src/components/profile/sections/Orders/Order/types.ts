@@ -1,3 +1,5 @@
 
 
-export type Props = Order
+export type Props = Order & {
+    onClick?:() => void;
+}

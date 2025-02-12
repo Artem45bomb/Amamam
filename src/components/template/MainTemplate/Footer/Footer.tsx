@@ -9,7 +9,7 @@ import {BtnAction} from "@/components/ui/assets/BtnAction";
 export const Footer: FC = () => {
     return <footer className={'px-20 flex flex-col bg-white border-t border-secondary'}>
         <div className={'flex-col flex w-full border-b border-gray-400 pt-32 pb-10'}>
-            <div className={" flex justify-between gap-10"}>
+            <div className={" flex flex-wrap justify-between gap-10"}>
                 <div className={'flex flex-col'}>
                     <BtnIcon className={'w-72 h-10 ml-auto'}>
                         <Image src={"/icon/logo-black.svg"} alt={"logo icon"} fill/>
@@ -66,7 +66,7 @@ export const Footer: FC = () => {
                     <p className={'font-normal text-base text-gray-300 mt-2'}>Минск, ул. Кальварийская, 21, 1
                         этаж</p>
                 </div>
-                <div className={'flex items-center pt-16 gap-12 items-center'}>
+                <div className={'flex flex-wrap items-center pt-16 gap-12 items-center'}>
                     <Link href={"/"}>
                         <Icon className={'min-w-52 min-h-16'} src={"/icon/logo_webpay.svg"} alt={"webpay"}/>
                     </Link>

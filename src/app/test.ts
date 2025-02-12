@@ -1212,6 +1212,191 @@ export const list1: ItemRecomendationsProps[] = [
     },
 ];
 
+export const listOrders:Order[] = [
+    {
+        id: "order1",
+        completed: true,
+        dateAccepted: "2023-10-01T10:00:00Z",
+        dateCompleted: "2023-10-01T12:00:00Z",
+        products: [
+            {
+                id: "product1",
+                image: "/png/potato.png",
+                price: 5.99,
+                count: 2,
+                weight: 1.5,
+                name: "Potato",
+                priceOriginal: 7.99
+            },
+            {
+                id: "product2",
+                image: "/png/instagram2.png",
+                price: 3.49,
+                count: 1,
+                weight: 0.5,
+                name: "Instagram Product"
+            }
+        ],
+        discount: {
+            price: 2.00,
+            date: 1633084800000,
+            type: "COURIER"
+        },
+        delivery: 0,
+        address: "123 Main St, Cityville"
+    },
+    {
+        id: "order2",
+        completed: false,
+        dateAccepted: "2023-10-02T11:00:00Z",
+        products: [
+            {
+                id: "product3",
+                image: "/png/product2.png",
+                price: 12.99,
+                count: 3,
+                weight: 2.0,
+                name: "Product 2"
+            }
+        ],
+        discount: {
+            type: "PICKUP"
+        },
+        delivery: 0,
+        address: "456 Elm St, Townsville"
+    },
+    {
+        id: "order3",
+        completed: true,
+        dateAccepted: "2023-10-03T09:00:00Z",
+        dateCompleted: "2023-10-03T11:00:00Z",
+        products: [
+            {
+                id: "product4",
+                image: "/png/product3.png",
+                price: 8.99,
+                count: 1,
+                weight: 1.0,
+                name: "Product 3"
+            }
+        ],
+        discount: {
+            price: 1.50,
+            date: 1633171200000,
+            type: "COURIER"
+        },
+        delivery: 0,
+        address: "789 Oak St, Villageton"
+    },
+    {
+        id: "order4",
+        completed: true,
+        dateAccepted: "2023-10-04T14:00:00Z",
+        dateCompleted: "2023-10-04T16:00:00Z",
+        products: [
+            {
+                id: "product5",
+                image: "/png/cookiesBusket.jpg",
+                price: 19.99,
+                count: 1,
+                weight: 3.0,
+                name: "Cookies Basket"
+            }
+        ],
+        discount: {
+            type: "PICKUP"
+        },
+        delivery: 0,
+        address: "321 Pine St, Hamletville"
+    },
+    {
+        id: "order5",
+        completed: false,
+        dateAccepted: "2023-10-05T12:00:00Z",
+        products: [
+            {
+                id: "product6",
+                image: "/png/ChinaSoup.jpg",
+                price: 15.99,
+                count: 2,
+                weight: 2.5,
+                name: "China Soup"
+            }
+        ],
+        discount: {
+            price: 3.00,
+            date: 1633344000000,
+            type: "COURIER"
+        },
+        delivery: 0,
+        address: "654 Birch St, Countryside"
+    },
+    {
+        id: "order6",
+        completed: true,
+        dateAccepted: "2023-10-06T08:00:00Z",
+        dateCompleted: "2023-10-06T10:00:00Z",
+        products: [
+            {
+                id: "product7",
+                image: "/png/product5.png",
+                price: 9.99,
+                count: 4,
+                weight: 4.0,
+                name: "Product 5"
+            }
+        ],
+        discount: {
+            type: "PICKUP"
+        },
+        delivery: 0,
+        address: "987 Cedar St, Suburbia"
+    },
+    {
+        id: "order7",
+        completed: true,
+        dateAccepted: "2023-10-07T13:00:00Z",
+        dateCompleted: "2023-10-07T15:00:00Z",
+        products: [
+            {
+                id: "product8",
+                image: "/png/potato.png",
+                price: 5.99,
+                count: 2,
+                weight: 1.5,
+                name: "Potato"
+            }
+        ],
+        discount: {
+            price: 1.00,
+            date: 1633516800000,
+            type: "COURIER"
+        },
+        delivery: 0,
+        address: "135 Maple St, Uptown"
+    },
+    {
+        id: "order8",
+        completed: false,
+        dateAccepted: "2023-10-08T16:00:00Z",
+        products: [
+            {
+                id: "product9",
+                image: "/png/instagram2.png",
+                price: 3.49,
+                count: 1,
+                weight: 0.5,
+                name: "Instagram Product"
+            }
+        ],
+        discount: {
+            type: "PICKUP"
+        },
+        delivery: 0,
+        address: "246 Walnut St, Downtown"
+    }
+];
+
 export const radioTest: CheckRadioProps[] = [
     { type: InputType.Radio, id: "zavtraki", label: "Завтраки", name: "food", typeProduct: ProductType.Breakfast, checked: false},
     { type: InputType.Radio, id: "poldniki", label: "Полдники", name: "food", typeProduct: ProductType.PostLaunch, checked: false},

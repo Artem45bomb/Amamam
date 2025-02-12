@@ -31,26 +31,22 @@ export interface ItemRecomendationsProps {
     price: number;
     describe: string;
     imgHover: string;
-    type: ProductType
-    TagCard?: TagsCard
+    type: ProductType;
+    TagCard?: TagsCard;
+    className?: string;
 }
-
-
-
-import { useState } from "react";
 import { TagIconCard } from "./TagIconCard";
 
-export default function ItemRecomendations({ imgPath, imgHover, stars, price, describe, type, TagCard, id}: ItemRecomendationsProps) {
+export default function ItemRecomendations({ imgPath, imgHover, stars, price, describe, type, TagCard, id,className}: ItemRecomendationsProps) {
     const router = useRouter();
-    const searchParams = useSearchParams();
     const handleClick = () => {
         // Переход на динамическую страницу
         router.push(`/busket/${id}`);
     };
 
     return (
-        <article className="text-black min-w-[250px] xl:max-w-[250px] xll:max-w-[2000px] cursor-pointer bg-white" onClick={handleClick}>
-                
+        <article className={cn("text-black min-w-[250px] xl:max-w-[250px] xll:max-w-[2000px] cursor-pointer bg-white",className)} onClick={handleClick}>
+
                 <div className="relative flex h-[250px] border border-blue-700">
                     
                     {TagCard!=undefined?<TagIconCard type={TagCard}/>:''}
