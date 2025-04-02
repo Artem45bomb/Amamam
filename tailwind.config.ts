@@ -30,7 +30,8 @@ export default {
         gilroy:["Gilroy","sans-serif"]
       },
       screens:{
-        'xll': '1440px'
+        'xll': '1440px',
+        
       }
   
     },
