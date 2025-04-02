@@ -30,7 +30,7 @@ export default function ProductCard() {
   
   function handleClickCart(){
     setIsActiveCart(!isActiveCart)
-    console.log(isActiveCart)
+    // console.log(isActiveCart)
   }
 
   const [count, setCount] = useState(0)
