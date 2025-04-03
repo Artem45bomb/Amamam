@@ -12,7 +12,7 @@ export default function Home() {
             <OrderProduct items={[{id:"image;9",srcImage:"/png/product4.png"},{id:"image;10",srcImage:"/png/product5.png"}]} className={'min-w-full aspect-[20/9] '}/>
         </div>
         <Menu/>
-        <InInstagram className="hidden"/>
+        <InInstagram className=""/>
         <Questions/>
       </div>);
 }
