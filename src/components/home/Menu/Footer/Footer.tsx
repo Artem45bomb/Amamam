@@ -11,7 +11,7 @@ export const Footer:FC = () => {
             <button>СМОТЕРТЬ ВСЕ {">"}</button>
         </div>
         <Products/>
-        <div className={'px-20 pt-28 pb-32 flex flex-col gap-7'} >
+        <div className={'px-10 sm:px-20 pt-64 sm:p-28 pb-32 flex flex-col gap-7'} >
             <h2 className={'text-primary text-xl font-bold'}>ПОЛКА С ПРОДУКТАМИ</h2>
             <ShelfProducts className={'h-142'} items={items}/>
         </div>

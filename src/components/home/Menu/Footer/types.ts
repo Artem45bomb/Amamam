@@ -3,7 +3,7 @@ import {SliderItem} from "@/components/home/slider/ShelfProducts";
 
 export const items: SliderItem[] = [{
     id: '1',
-    srcImage: "/png/product1.png",
+    srcImage: "/png/ChinaSoup.jpg",
     title: "шеф рекомендует брать!",
     body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis."
 },
