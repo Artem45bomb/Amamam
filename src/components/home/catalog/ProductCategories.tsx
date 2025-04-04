@@ -7,7 +7,7 @@ import { Icon } from "@/components/ui/assets/Icon/Icon";
 
 export function ProductCategories(){
     return (
-        <div className="flex">
+        <div className="flex border-b-2 border-blue-700">
             <div className="w-80 bg-white px-20 py-16">
                 <fieldset className="text-secondary font-gilroy flex flex-col gap-7">
                     <RadioCategory label="еда" id="food" cheked={true}/>

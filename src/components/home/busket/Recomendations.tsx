@@ -14,7 +14,7 @@ export interface RecomendationsProps {
 
 export default function Recomendations({ list }: RecomendationsProps) {
     return (
-        <div className="grid xl:grid-cols-4 gap-x-[90px] md:grid-cols-2 gap-y-14">
+        <div className="grid xl:grid-cols-4 gap-x-[90px] md:grid-cols-2 gap-y-7 lg:gap-y-14">
             {list.map((item) => (
                 <ItemRecomendations
                     key={item.id}

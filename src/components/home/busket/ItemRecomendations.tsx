@@ -1,13 +1,8 @@
 "use client";
 
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { Icon } from "@/components/ui/assets/Icon/Icon"
 import { cn } from "@/utils/style"
-
-enum TypeOfBorder {
-    Information,
-    Product
-}
 
 export enum ProductType {
     Breakfast = "Завтраки",
@@ -37,7 +32,7 @@ export interface ItemRecomendationsProps {
 }
 import { TagIconCard } from "./TagIconCard";
 
-export default function ItemRecomendations({ imgPath, imgHover, stars, price, describe, type, TagCard, id,className}: ItemRecomendationsProps) {
+export default function ItemRecomendations({ imgPath, imgHover, stars, price, describe, TagCard, id, className}: ItemRecomendationsProps) {
     const router = useRouter();
     const handleClick = () => {
         // Переход на динамическую страницу

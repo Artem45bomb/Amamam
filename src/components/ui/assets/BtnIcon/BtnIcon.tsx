@@ -1,7 +1,6 @@
 import {Props} from "./type"
 import {FC} from "react";
 import {cn} from "@/utils/style";
-import { Iceberg } from "next/font/google";
 
 
 export const BtnIcon:FC<Props> = ({className,children,onClick}) => {

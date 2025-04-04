@@ -5,11 +5,11 @@ import {Question} from "@/components/home/Questions/Question/Question";
 
 
 export const Questions: FC = () => {
-    return <div className={'px-20 pt-28 pb-16 flex flex-col gap-24'}>
-        <div className={'flex w-full gap-32'}>
+    return <div className={'px-8 sm:px-20 pt-28 pb-16 flex flex-col gap-24'}>
+        <div className={'flex flex-col lg:flex-row w-full gap-x-32'}>
             <div className={'flex-[2] flex flex-col gap-14'}>
                 <h2 className={'text-primary font-bold text-3xl'}>ВОПРОСЫ И ОТВЕТЫ</h2>
-                <div className={'flex gap-14 w-full flex-col'}>
+                <div className={'flex gap-7 sm:gap-14 w-full flex-col'}>
                     <Question
                         title={"Сколько стоит доставка?"}
                         text={"Точную стоимость доставки вы можете увидеть в корзине при оформлении заказа. При высоком спросе стоимость доставки может быть увеличена."}
@@ -36,7 +36,7 @@ export const Questions: FC = () => {
                     />
                 </div>
             </div>
-            <div className={'flex-[1] pt-16'}>
+            <div className={'flex-1 pt-12 sm:pt-16 ml-auto'}>
                 <div
                     className={'font-nauryzRedKeds border-2 border-blue-700 rounded-t-xl rounded-bl-xl w-full pl-9 pr-4 pb-5 flex flex-col items-start relative'}>
                     <i className={'border-blue-700 border-2 rounded-full h-6 w-6 flex justify-center items-center text-base text-blue-700 ml-auto mt-3 mb-2 '}>
@@ -56,9 +56,9 @@ export const Questions: FC = () => {
                 </div>
             </div>
         </div>
-        <div className={'px-7 flex w-full'}>
+        <div className={'px-2 md:px-7 flex flex-col lg:flex-row gap-y-4 w-full'}>
             <div className={'flex-1 flex gap-10'}>
-                <div className={'w-10 aspect-square relative'}>
+                <div className={'w-10 aspect-square relative bottom-1'}>
                     <Image fill src={"/icon/mail.svg"} alt={""}/>
                 </div>
                 <div className={'flex flex-col font-gilroy text-primary gap-2'}>
@@ -66,9 +66,9 @@ export const Questions: FC = () => {
                     <p className={'text-base font-normal'}>Получайте специальные предложения</p>
                 </div>
             </div>
-            <div className={'flex-1 h-12 flex'}>
-                <input className={'flex-1 bg-gray-100 border border-secondary px-6 py-4 w-[65%]'} placeholder={"Email"}/>
-                <BtnAction className={'h-full max-w-[35%]'}>
+            <div className={'h-12 flex md:w-96 xl:w-[580px] gap-y-3 flex-col md:flex-row mb-12 md:mb-0'}>
+                <input className={'flex-1 bg-gray-100 border border-secondary px-6 py-4 md:w-72 xl:w-[65%]'} placeholder={"Email"}/>
+                <BtnAction className={'h-full px-2 xl:w-[35%] flex-1 min-h-14 md:min-h-12'}>
                     Зарегестрироваться
                 </BtnAction>
             </div>

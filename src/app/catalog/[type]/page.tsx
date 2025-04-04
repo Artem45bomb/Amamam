@@ -8,17 +8,15 @@ import { list1, radioTest } from "../../test";
 import { Icon } from "@/components/ui/assets/Icon/Icon";
 import Recomendations from "@/components/home/busket/Recomendations";
 import { ProductType } from "@/components/home/busket/ItemRecomendations";
-import { useParams, useSearchParams } from "next/navigation";
+import { useParams } from "next/navigation";
 import { useRouter } from "next/navigation";
 
 
 export default function CatalogType(){
     const router = useRouter();
 
-    let params = useParams<{type:string}>()
+    const params = useParams<{type:string}>()
     const decodeParams = decodeURIComponent(params.type)
-    // const searchParams = useSearchParams();
-    // const params = searchParams.get('')
 
     const [selected, setSelected] = useState(decodeParams);
     const [chooseTypeProduct, setChooseTypeProduct] = useState(decodeParams)
@@ -53,7 +51,7 @@ export default function CatalogType(){
                     name="sort" 
                     id="sort-select" 
                     className="text-lg font-gilroy font-medium text-primary bg-transparent appearance-none focus:outline-none rounded-none" 
-                    onClick={() => {isOpen ? setIsOpen(false): setIsOpen(true)}} 
+                    onClick={() => setIsOpen(!isOpen)} 
                     onBlur={() => setIsOpen(false)}
                 >
                     <option value="popular" className="">по популярности</option>

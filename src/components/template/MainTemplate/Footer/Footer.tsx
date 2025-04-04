@@ -7,8 +7,8 @@ import {BtnAction} from "@/components/ui/assets/BtnAction";
 
 
 export const Footer: FC = () => {
-    return <footer className={'px-20 flex flex-col bg-white border-t border-secondary'}>
-        <div className={'flex-col flex w-full border-b border-gray-400 pt-32 pb-10'}>
+    return <footer className={'px-10 md:px-20 flex flex-col bg-white border-t border-secondary'}>
+        <div className={'flex-col flex w-full border-b border-gray-400 pt-10 md:pt-32 pb-10'}>
             <div className={" flex flex-wrap justify-between gap-10"}>
                 <div className={'flex flex-col'}>
                     <BtnIcon className={'w-72 h-10 ml-auto'}>
@@ -60,13 +60,12 @@ export const Footer: FC = () => {
                     </ul>
                 </div>
             </div>
-            <div className={'flex justify-between mt-24'}>
+            <div className={'flex  flex-col justify-between mt-24'}>
                 <div className={'font-gilroy'}>
                     <p className={'font-semibold text-3xl text-black'}>+375 29 000 00 00</p>
-                    <p className={'font-normal text-base text-gray-300 mt-2'}>Минск, ул. Кальварийская, 21, 1
-                        этаж</p>
+                    <p className={'font-normal text-base text-gray-300 mt-2'}>Минск, ул. Кальварийская, 21, 1 этаж</p>
                 </div>
-                <div className={'flex flex-wrap items-center pt-16 gap-12 items-center'}>
+                <div className={'flex flex-wrap items-center gap-12 justify-center lg:justify-end mt-4 xl:mt-0'}>
                     <Link href={"/"}>
                         <Icon className={'min-w-52 min-h-16'} src={"/icon/logo_webpay.svg"} alt={"webpay"}/>
                     </Link>
@@ -88,7 +87,7 @@ export const Footer: FC = () => {
                 </div>
             </div>
         </div>
-        <div className={'font-gilroy text-primary font-normal text-base flex justify-between items-end pt-20 pb-24'}>
+        <div className={'font-gilroy text-primary font-normal text-base flex flex-col lg:flex-row justify-between lg:items-end pt-10 md:pt-20 pb-12 md:pb-24'}>
             <p>ООО «Презент Симпл», УНП 193590358, регистрация №193590358 от 15.09.2021,<br/>
                 Мингорисполком, юр. адрес: Республика Беларусь, г.Минск, ул.Кальварийская,<br/>
                 21-114. Интернет-магазин present-simple.by зарегистрирован в Торговом реестре<br/>

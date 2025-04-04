@@ -1,7 +1,9 @@
 "use client";
 import Image from "next/image";
 import {useRouter} from "next/navigation";
-
+import Link from "next/link";
+import React from 'react';
+import YandexMap from '@/components/YandexMap';
 
 export default function Contacts(){
     const router = useRouter();
@@ -25,7 +27,7 @@ export default function Contacts(){
                 </div>
                 <div className={"flex flex-col gap-6 font-gilroy  border-b-[0.5px] border-neutral-700 pb-10"}>
                     <h2 className={"font-semibold text-4xl text-primary"}>
-                        Минск, Кальварийская, 21, 1 этаж
+                    Минск, пр. Независимости, 88, 1 этаж, пом. 760
                     </h2>
                     <p className={"font-normal text-secondary text-sm"} >всегда ждем вас</p>
                     <button className={"bg-blue-700 text-center text-white font-bold text-base w-56 py-4"}>
@@ -34,26 +36,26 @@ export default function Contacts(){
                 </div>
                 <div className={"flex flex-col gap-6 font-gilroy  border-b-[0.5px] border-neutral-700 pb-10"}>
                     <h2 className={"font-semibold text-4xl text-primary"}>
-                        +375 44 774 51 09
+                    +375 44 721 14 20
                     </h2>
-                    <p className={"font-normal text-secondary text-sm"} >8:00 - 21:00</p>
+                    <p className={"font-normal text-secondary text-sm"} >9:00 - 21:00 ежедневно</p>
                 </div>
                 <div className={"flex flex-col gap-6 font-gilroy  border-b-[0.5px] border-neutral-700 pb-10"}>
                     <h2 className={"font-semibold text-4xl text-primary"}>
-                        amamam@gmail.com
+                    <Link href={"mailto:hello@amamam.by"}>hello@amamam.by</Link>
                     </h2>
                     <p className={"font-normal text-secondary text-sm"} >круглосуточно</p>
                 </div>
                 <div className={"flex flex-col gap-6 font-gilroy  border-b-[0.5px] border-neutral-700 pb-10"}>
                     <h2 className={"font-semibold text-4xl text-primary"}>
-                        Режим работы <br/>8:00 - 21:00
+                        Режим работы<br/>9:00 - 21:00 ежедневно
                     </h2>
                     <p className={"font-normal text-secondary text-sm"} >всегда ждем вас</p>
                 </div>
             </div></div>
 
         <div className={"w-full aspect-[3/1] relative"}>
-            <Image className={"bg-cover"} src={"/map.jpg"} alt={"map"} fill/>
+            <YandexMap address="Минск, пр. Независимости, 88, 1 этаж, пом. 760" showMarker={true} />
         </div>
     </div>
 }

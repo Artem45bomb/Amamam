@@ -22,8 +22,8 @@ export const Tabs = ({name, id, describe,energyValue,nutritionalValue}:TabsProps
   const [activeTab, setActiveTab] = useState<string>(tabsNames[0].name);
 
   return (
-    <div className="w-2/3">
-      <div className="relative flex border-b border-gray-300">
+    <div className="xl:w-2/3 lg:w-4/5 w-full">
+      <div className="relative flex flex-col md:flex-row border-b border-gray-300">
         {tabsNames.map((tab) => (
           <button
             key={tab.name}
@@ -36,7 +36,7 @@ export const Tabs = ({name, id, describe,energyValue,nutritionalValue}:TabsProps
           </button>
         ))}
         <div
-          className="absolute bottom-0 h-0.5 bg-blue-600 transition-all duration-300"
+          className="absolute bottom-0 h-0.5 bg-blue-600 transition-all duration-300 hidden md:block"
           style={{
             width: `${100 / tabsNames.length}%`,
             left: `${(tabsNames.findIndex((t) => t.name === activeTab) * 100) / tabsNames.length}%`,

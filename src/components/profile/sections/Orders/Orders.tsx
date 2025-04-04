@@ -1,6 +1,6 @@
 "use client";
 import {Props} from "./types";
-import {FC, useMemo} from "react";
+import {FC} from "react";
 import {listOrders} from "@/app/test";
 import {Order} from "@/components/profile/sections/Orders/Order";
 import {Section} from "@/components/profile/sections/types";

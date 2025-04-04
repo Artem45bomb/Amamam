@@ -16,7 +16,7 @@ export interface CheckRadioProps {
     checked: boolean
 }
 
-export default function CheckRadio({ type, id, label, name, onChange, typeProduct, checked }: CheckRadioProps) {
+export default function CheckRadio({ type, id, label, name, onChange, checked }: CheckRadioProps) {
     return (
         <div className="flex text-secondary cursor-pointer">
             <input type={type} id={id} className="peer hidden" name={name} onChange={onChange} checked={checked}/>
