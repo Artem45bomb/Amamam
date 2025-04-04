@@ -1,6 +1,6 @@
 "use client";
 
-import { useParams, useRouter } from "next/navigation";
+import { useParams } from "next/navigation";
 import DescribeProduct from "@/components/home/busket/DescribeProduct";
 import DetailsProduct from "@/components/home/busket/DetailsProduct";
 import ProductImages from "@/components/home/busket/ProductImages";
@@ -15,7 +15,6 @@ import Cart from "@/components/home/busket/Cart";
 
 export default function ProductCard() {
   const params = useParams<{id:string}>()
-  const listPathes = ["/png/cookiesBusket.jpg", "/png/ChinaSoup.jpg", "/png/product1.png"]
 
   const [isActiveCart, setIsActiveCart] = useState(false);
 

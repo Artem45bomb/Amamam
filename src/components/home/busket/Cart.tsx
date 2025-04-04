@@ -1,7 +1,7 @@
 import { list1, mokeListInt } from "@/app/test";
 import { Icon } from "@/components/ui/assets/Icon/Icon";
 import Recomendations from "./Recomendations";
-import { useParams, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 import {v4 as uuidv4} from 'uuid'
 
 interface CartProps{
@@ -15,8 +15,6 @@ interface CartProps{
 
 export default function Cart({onClickCart,mainProduct, onClickMinus, onClickPlus, count, isActiveCart,}:CartProps){
     const router = useRouter();
-
-    const params = useParams<{id:string}>()
 
     function handleMakeOrder(){
         const orderID = uuidv4()

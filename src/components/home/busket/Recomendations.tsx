@@ -1,11 +1,7 @@
 "use client";
 
-import ItemRecomendations, { ProductType } from "./ItemRecomendations";
+import ItemRecomendations from "./ItemRecomendations";
 import { ItemRecomendationsProps } from "./ItemRecomendations";
-// import dynamic from "next/dynamic";
-// const ItemRecomendations = dynamic(() => import("./ItemRecomendations"), { ssr: false });
-
-import { list1 } from "../../../app/test";
 
 export interface RecomendationsProps {
     list:ItemRecomendationsProps[]

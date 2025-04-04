@@ -31,7 +31,7 @@ export const UserAction = () => {
         e.preventDefault();
         const formData = new FormData(e.currentTarget);
         if(!isVerifiedEmail) {
-            const phone = (formData.get("phone")?.toString() ?? '') as string;
+            // const phone = (formData.get("phone")?.toString() ?? '') as string;
             const email = (formData.get("email") ?? '')?.toString() as string;
             setIsVerifiedEmail(email);
         }
@@ -40,7 +40,7 @@ export const UserAction = () => {
             await mutateAsync({username:isVerifiedEmail,password:code})
             router.push("/profile");
         }
-    },[mutateAsync,isVerifiedEmail])
+    },[mutateAsync,isVerifiedEmail, router])
 
 
     return <div className="relative">
