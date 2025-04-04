@@ -72,7 +72,7 @@ export default function ProductCard() {
         </div>
 
 
-        <div className="mx-20 mt-24">
+        <div className="mx-7 lg:mx-20 mt-6 md:mt-12 lg:mt-24">
           <div className="flex justify-end">
             <DescribeProduct name={mainProduct?.name} id={mainProduct?.id} describe={mainProduct?.describe} energyValue={mainProduct?.energyValue} nutritionalValue={mainProduct?.nutritionalValue}/>
           </div>
