@@ -16,6 +16,7 @@ import {v4 as uuidv4} from 'uuid'
 
 import { mokeList } from "@/app/test";
 import Cart from "@/components/home/busket/Cart";
+import { InInstagram } from "@/components/home/InInstagram";
 
 export default function ProductCard() {
   const params = useParams<{id:string}>()
@@ -85,6 +86,7 @@ export default function ProductCard() {
         <a href="#" className="block text-center text-primary text-xl font-nauryzRedKeds mt-16 md:mt-[136px] mb-20 font-bold">
           СМОТРЕТЬ ВСЕ
         </a>
+        {/* <InInstagram className={"my-24"}/> */}
     </div>
   );
 }
