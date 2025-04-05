@@ -39,13 +39,17 @@ export const InInstagram: FC<Stylable> = ({className}) => {
                         Our designer already made a lot of beautiful prototypes of rooms that inspire you
                     </p>
                 </div>
-                <button className={'mt-4 sm:mt-7 font-gilroy font-normal text-sm sm:text-base text-white hover:opacity-80 transition-opacity'}>
-                    Подробнее{" >"}
+                <button className={cn('mt-4 sm:mt-7 font-gilroy font-normal text-sm sm:text-base text-white',
+                    'flex items-center gap-1 transition-all duration-300',
+                    'hover:opacity-80 hover:gap-2 active:scale-95')
+                }>
+                    Подробнее{" "}
+                    <span className="inline-block transition-transform duration-300 hover:translate-x-1">{">"}</span>
                 </button>
             </div>
 
             {/* Слайдер */}
-            <div className="relative w-full lg:flex-1 min-h-[300px] sm:min-h-[400px] lg:min-h-[586px]">
+            <div className="relative w-full lg:flex-1 min-h-[300px] sm:min-h-[400px] lg:min-h-[586px] group">
                 <Swiper
                     className={'absolute top-0 left-0 w-full h-full'}
                     spaceBetween={16}
@@ -73,15 +77,16 @@ export const InInstagram: FC<Stylable> = ({className}) => {
                         <SwiperSlide
                             key={slide.id}
                             className={cn(
-                                "min-h-[250px] sm:min-h-[350px] lg:min-h-[486px] max-w-[280px] sm:max-w-[350px] lg:max-w-96 bg-red-500 transition-all relative",
-                                i === 0 ? 'lg:min-h-[586px]' : ''
+                                "min-h-[250px] sm:min-h-[350px] lg:min-h-[486px] max-w-[280px] sm:max-w-[350px] lg:max-w-96",
+                                "relative transition-transform duration-500 hover:z-10",
+                                i === 0 ? 'lg:min-h-[586px]' : 'hover:scale-105'
                             )}
                         >
                             <Image 
                                 fill 
                                 src={slide.srcImage} 
                                 alt="item slide"
-                                className="object-cover"
+                                className="object-cover transition-all duration-300 group-hover:brightness-95"
                             />
                         </SwiperSlide>
                     ))}
@@ -89,13 +94,14 @@ export const InInstagram: FC<Stylable> = ({className}) => {
                 
                 {/* Навигационные точки */}
                 <div className={'flex gap-4 absolute bottom-4 sm:bottom-9 left-1/2 -translate-x-1/2 lg:left-6 lg:translate-x-0 z-40'}>
-                    {slides.map((_, i) => (
+                    {slidesInitial.map((_, i) => (
                         <button
                             onClick={() => setSlide(i)}
                             key={i + '-navigation'}
                             className={cn(
-                                'w-3 h-3 sm:w-4 sm:h-4 rounded-full transition-colors',
-                                active === i ? 'bg-white' : 'border-white border'
+                                'w-3 h-3 sm:w-4 sm:h-4 rounded-full transition-all duration-300',
+                                'hover:scale-125 active:scale-95',
+                                active === i ? 'bg-white scale-125' : 'border-white border hover:bg-white/30'
                             )}
                             aria-label={`Перейти к слайду ${i+1}`}
                         />

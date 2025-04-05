@@ -75,7 +75,7 @@ export default function ProductCard() {
 
         <div className="mt-12 sm:mt-24 mx-7 sm:ml-20 sm:mr-[90px]">
           <p className="font-bold text-2xl sm:text-5xl font-nauryzRedKeds mb-14 text-blue-700">ВАМ ПРИГОДИТЬСЯ</p>
-          <Recomendations list={list1.slice(0,4)}/>
+          <Recomendations list={list1.slice(0,4)} classname=""/>
         </div>
         <a href="#" className="block text-center text-primary text-xl font-nauryzRedKeds mt-16 md:mt-[136px] mb-20 font-bold">
           СМОТРЕТЬ ВСЕ

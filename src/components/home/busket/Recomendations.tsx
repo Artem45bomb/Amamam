@@ -1,16 +1,18 @@
 "use client";
 
+import { cn } from "@/utils/style";
 import ItemRecomendations from "./ItemRecomendations";
 import { ItemRecomendationsProps } from "./ItemRecomendations";
 
 export interface RecomendationsProps {
-    list:ItemRecomendationsProps[]
+    list:ItemRecomendationsProps[], 
+    classname?: string
 }
 
 
-export default function Recomendations({ list }: RecomendationsProps) {
+export default function Recomendations({ list,classname }: RecomendationsProps) {
     return (
-        <div className="grid xl:grid-cols-4 gap-x-[90px] md:grid-cols-2 gap-y-7 lg:gap-y-14">
+        <div className={cn("grid xl:grid-cols-4 gap-x-[90px] md:grid-cols-2 gap-y-7 lg:gap-y-14", classname)}>
             {list.map((item) => (
                 <ItemRecomendations
                     key={item.id}

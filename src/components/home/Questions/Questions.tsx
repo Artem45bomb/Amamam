@@ -56,20 +56,40 @@ export const Questions: FC = () => {
                 </div>
             </div>
         </div>
-        <div className={'px-2 md:px-7 flex flex-col lg:flex-row gap-y-4 w-full'}>
-            <div className={'flex-1 flex gap-10'}>
-                <div className={'w-10 aspect-square relative bottom-1'}>
-                    <Image fill src={"/icon/mail.svg"} alt={""}/>
+        <div className={'px-4 md:px-7 flex flex-col lg:flex-row gap-y-6 w-full items-center'}>
+  {/* Левая часть с иконкой и текстом */}
+            <div className={'flex-1 flex gap-6 items-start group'}>
+                <div className={'w-10 aspect-square relative transition-transform duration-300 hover:scale-110'}>
+                <Image fill src={"/icon/mail.svg"} alt="Иконка почты" className="drop-shadow-sm"/>
                 </div>
                 <div className={'flex flex-col font-gilroy text-primary gap-2'}>
-                    <h3 className={'font-bold text-2xl leading-6'}>Новости</h3>
-                    <p className={'text-base font-normal'}>Получайте специальные предложения</p>
+                <h3 className={'font-bold text-2xl leading-6 transition-colors duration-300 group-hover:text-blue-700'}>
+                    Новости
+                </h3>
+                <p className={'text-base font-normal transition-colors duration-300 group-hover:text-blue-600'}>
+                    Получайте специальные предложения
+                </p>
                 </div>
             </div>
-            <div className={'h-12 flex md:w-96 xl:w-[580px] gap-y-3 flex-col md:flex-row mb-12 md:mb-0'}>
-                <input className={'flex-1 bg-gray-100 border border-secondary px-6 py-4 md:w-72 xl:w-[65%]'} placeholder={"Email"}/>
-                <BtnAction className={'h-full px-2 xl:w-[35%] flex-1 min-h-14 md:min-h-12'}>
-                    Зарегестрироваться
+
+            {/* Правая часть с формой */}
+            <div className={'h-12 flex md:w-96 xl:w-[580px] gap-3 flex-col md:flex-row w-full mb-6 md:mb-0'}>
+                <input 
+                className={
+                    'flex-1 bg-gray-50 border border-gray-200 px-6 py-4 md:w-72 xl:w-[65%] ' +
+                    'transition-all duration-300 focus:border-blue-500 focus:ring-1 focus:ring-blue-200 ' +
+                    'hover:border-gray-300 placeholder-gray-400'
+                }
+                placeholder={"Email"}
+                />
+                <BtnAction 
+                className={
+                    'h-full px-4 xl:w-[35%] flex-1 min-h-14 md:min-h-12 ' +
+                    'transition-all duration-300 hover:shadow-md ' +
+                    'active:scale-[0.98] font-medium'
+                }
+                >
+                Зарегистрироваться
                 </BtnAction>
             </div>
         </div>
