@@ -1,7 +1,7 @@
 import { FC, useState } from "react";
 import { BtnLogo } from "@/components/ui/assets/BtnLogo/BtnLogo";
 import { Action } from "@/components/template/MainTemplate/Header/Action";
-import Link from "next/link";
+import {Link} from "@/components/ui/Link";
 
 export const Header: FC = () => {
     const [isOpen, setIsOpen] = useState(false);
