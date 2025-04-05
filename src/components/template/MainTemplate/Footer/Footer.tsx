@@ -1,6 +1,6 @@
 import {FC} from "react";
 import {BtnIcon} from "@/components/ui/assets/BtnIcon";
-import Link from "next/link";
+import { Link } from "@/components/ui/Link";
 import Image from "next/image";
 import {Icon} from "@/components/ui/assets/Icon/Icon";
 import {BtnAction} from "@/components/ui/assets/BtnAction";
@@ -32,20 +32,20 @@ export const Footer: FC = () => {
                 <div className={'flex flex-col font-gilroy font-medium text-2xl gap-5'}>
                     <h2 className={'text-black'}>Покупателям</h2>
                     <ul className={'flex flex-col gap-5 text-base text-primary font-light'}>
-                        <Link href={"/delivery"}>Доставка</Link>
-                        <Link href={"/refund"}>Возврат</Link>
-                        <Link href={"/catalog"}>Каталог</Link>
-                        <Link href={"/questions"}>Вопросы и ответы</Link>
-                        <Link href={"/i"}>Инстаграм</Link>
-                        <Link href={"/reviews"}>Отзывы</Link>
+                        <li><Link href={"/delivery"}>Доставка</Link></li>
+                        <li><Link href={"/refund"}>Возврат</Link></li>
+                        <li><Link href={"/catalog"}>Каталог</Link></li>
+                        <li><Link href={"/questions"}>Вопросы и ответы</Link></li>
+                        <li><Link href={"/i"}>Инстаграм</Link></li>
+                        <li><Link href={"/reviews"}>Отзывы</Link></li>
                     </ul>
                 </div>
                 <div className={'flex flex-col font-gilroy font-medium text-2xl gap-5 '}>
                     <h2 className={'text-primary text-nowrap text-black'}>О компании</h2>
                     <ul className={'flex flex-col gap-5 text-base text-primary font-light'}>
-                        <Link href={"/career"}>Карьера</Link>
-                        <Link href={"/history"}>Истории</Link>
-                        <Link href={"/contacts"}>Контакты</Link>
+                        <li><Link href={"/career"}>Карьера</Link></li>
+                        <li><Link href={"/history"}>Истории</Link></li>
+                        <li><Link href={"/contacts"}>Контакты</Link></li>
                     </ul>
                 </div>
                 <div className={'max-w-72 font-gilroy font-normal text-base text-black'}>
