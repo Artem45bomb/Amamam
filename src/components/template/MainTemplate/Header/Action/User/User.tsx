@@ -8,6 +8,7 @@ import {useLoginMutation} from "@/services/login";
 import {useRouter} from "next/navigation";
 import {useSession} from "next-auth/react";
 import {authService} from "@/services/impl/AuthService";
+import { FieldErrors, validateSignUpForm, hasErrors } from "@/utils/validation";
 
 
 type SignUpError = {
@@ -23,6 +24,7 @@ export const UserAction = () => {
     const [show, setShow] = useState(false);
     const [isSignUp, setIsSignUp] = useState(false);
     const [error, setError] = useState<string>("");
+    const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
     const [formData, setFormData] = useState<CredentialUser>({
         username: "",
         password: "",
@@ -36,6 +38,7 @@ export const UserAction = () => {
     const handleClose = () => {
         setShow(false);
         setError("");
+        setFieldErrors({});
         setIsSignUp(false);
     };
 
@@ -51,33 +54,26 @@ export const UserAction = () => {
             ...prev,
             [name]: value
         }));
-    };
-
-    const validateSignUpForm = () => {
-        if (!formData.username || !formData.password || !formData.password2 || !formData.email) {
-            setError("Все поля обязательны для заполнения");
-            return false;
+        
+        // Очищаем ошибку для поля при изменении
+        if (fieldErrors[name]) {
+            setFieldErrors(prev => {
+                const newErrors = {...prev};
+                delete newErrors[name];
+                return newErrors;
+            });
         }
-        if (formData.password !== formData.password2) {
-            setError("Пароли не совпадают");
-            return false;
-        }
-        if (formData.password.length < 6) {
-            setError("Пароль должен быть не менее 6 символов");
-            return false;
-        }
-        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-            setError("Некорректный email");
-            return false;
-        }
-        return true;
     };
 
     const handleSignUp = async (e: React.FormEvent) => {
         e.preventDefault();
         setError("");
+        setFieldErrors({});
 
-        if (!validateSignUpForm()) {
+        const validationErrors = validateSignUpForm(formData);
+        setFieldErrors(validationErrors);
+        
+        if (hasErrors(validationErrors)) {
             return;
         }
 
@@ -87,14 +83,18 @@ export const UserAction = () => {
             await mutateAsync({username: formData.username, password: formData.password});
             router.push("/profile");
             handleClose();
-        } catch (error:any) {
-            if (error.response?.data) {
+        } catch (error: unknown) {
+            if (error && typeof error === 'object' && 'response' in error && error.response && typeof error.response === 'object' && 'data' in error.response) {
                 const errorData = error.response.data as SignUpError;
-                const errorMessages = Object.entries(errorData)
-                    .map(([, messages]) => messages?.join(', '))
-                    .filter(Boolean)
-                    .join('\n');
-                setError(errorMessages || "Произошла ошибка при регистрации");
+                const newFieldErrors: FieldErrors = {};
+                
+                Object.entries(errorData).forEach(([field, messages]) => {
+                    if (messages && messages.length > 0) {
+                        newFieldErrors[field] = messages.join(', ');
+                    }
+                });
+                
+                setFieldErrors(newFieldErrors);
             } else {
                 setError("Произошла ошибка при регистрации");
             }
@@ -104,6 +104,7 @@ export const UserAction = () => {
     const handleSignIn = useCallback<FormEventHandler<HTMLFormElement>>(async (e) => {
         e.preventDefault();
         setError("");
+        setFieldErrors({});
         const formData = new FormData(e.currentTarget);
         const phone = ((formData.get("phone")?.toString() ?? '') as string)
             .replace(/[)\s]/g, '')
@@ -144,8 +145,28 @@ export const UserAction = () => {
                                     из письма.</p>
                                 <div className={"flex flex-col gap-10 w-full"}>
                                     <>
-                                        <FormInput input={"phone"} options={{phone:{inputProps:{name:"phone",id:"phone"}}}}/>
-                                        <FormInput placeholder={"password"} name="password" id={"password"}/>
+                                        <FormInput 
+                                            input={"phone"} 
+                                            options={{
+                                                phone:{
+                                                    inputProps:{
+                                                        name:"phone",
+                                                        id:"phone"
+                                                    }
+                                                }
+                                            }}
+                                        />
+                                        <div className="flex flex-col">
+                                            <FormInput 
+                                                placeholder={"password"} 
+                                                name="password" 
+                                                id={"password"}
+                                                className={fieldErrors.password ? "border-red-500" : ""}
+                                            />
+                                            {fieldErrors.password && (
+                                                <span className="text-red-500 text-sm mt-1">{fieldErrors.password}</span>
+                                            )}
+                                        </div>
                                     </>
                                 </div>
                                 <BtnAction type={"submit"} className={"mt-[10vh] font-bold font-gilroy text-xl"} black>
@@ -163,51 +184,88 @@ export const UserAction = () => {
                             <form className="flex flex-col font-gilroy text-left w-full md:w-4/5 lg:w-3/5" onSubmit={handleSignUp}>
                                 <h2 className={"font-semibold text-2xl md:text-3xl"}>РЕГИСТРАЦИЯ</h2>
                                 <div className={"flex flex-col gap-3 md:gap-4 w-full mt-6 md:mt-8"}>
+                                    <div className="flex flex-col">
+                                        <FormInput
+                                            name="username"
+                                            placeholder="Имя пользователя"
+                                            value={formData.username}
+                                            onChange={handleChange}
+                                            className={fieldErrors.username ? "border-red-500" : ""}
+                                        />
+                                        {fieldErrors.username && (
+                                            <span className="text-red-500 text-sm mt-1">{fieldErrors.username}</span>
+                                        )}
+                                    </div>
+                                    <div className="flex flex-col">
+                                        <FormInput
+                                            name="email"
+                                            type="email"
+                                            placeholder="Email"
+                                            value={formData.email}
+                                            onChange={handleChange}
+                                            className={fieldErrors.email ? "border-red-500" : ""}
+                                        />
+                                        {fieldErrors.email && (
+                                            <span className="text-red-500 text-sm mt-1">{fieldErrors.email}</span>
+                                        )}
+                                    </div>
+                                    <div className="flex flex-col">
+                                        <FormInput
+                                            name="first_name"
+                                            placeholder="Имя"
+                                            value={formData.first_name}
+                                            onChange={handleChange}
+                                            className={fieldErrors.first_name ? "border-red-500" : ""}
+                                        />
+                                        {fieldErrors.first_name && (
+                                            <span className="text-red-500 text-sm mt-1">{fieldErrors.first_name}</span>
+                                        )}
+                                    </div>
+                                    <div className="flex flex-col">
+                                        <FormInput
+                                            name="last_name"
+                                            placeholder="Фамилия"
+                                            value={formData.last_name}
+                                            onChange={handleChange}
+                                            className={fieldErrors.last_name ? "border-red-500" : ""}
+                                        />
+                                        {fieldErrors.last_name && (
+                                            <span className="text-red-500 text-sm mt-1">{fieldErrors.last_name}</span>
+                                        )}
+                                    </div>
                                     <FormInput
-                                        name="username"
-                                        placeholder="Имя пользователя"
-                                        value={formData.username}
-                                        onChange={handleChange}
-                                    />
-                                    <FormInput
-                                        name="email"
-                                        type="email"
-                                        placeholder="Email"
-                                        value={formData.email}
-                                        onChange={handleChange}
-                                    />
-                                    <FormInput
-                                        name="first_name"
-                                        placeholder="Имя"
-                                        value={formData.first_name}
-                                        onChange={handleChange}
-                                    />
-                                    <FormInput
-                                        name="last_name"
-                                        placeholder="Фамилия"
-                                        value={formData.last_name}
-                                        onChange={handleChange}
-                                    />
-                                    <FormInput
-                                        name="phone"
-                                        placeholder="Телефон"
                                         value={formData.phone}
-                                        onChange={handleChange}
+                                        input={"phone"}
+                                        options={{
+                                            phone:{inputProps:{name:"phone",id:"phone"}}
+                                        }}
                                     />
-                                    <FormInput
-                                        name="password"
-                                        type="password"
-                                        placeholder="Пароль"
-                                        value={formData.password}
-                                        onChange={handleChange}
-                                    />
-                                    <FormInput
-                                        name="password2"
-                                        type="password"
-                                        placeholder="Подтверждение пароля"
-                                        value={formData.password2}
-                                        onChange={handleChange}
-                                    />
+                                    <div className="flex flex-col">
+                                        <FormInput
+                                            name="password"
+                                            type="password"
+                                            placeholder="Пароль"
+                                            value={formData.password}
+                                            onChange={handleChange}
+                                            className={fieldErrors.password ? "border-red-500" : ""}
+                                        />
+                                        {fieldErrors.password && (
+                                            <span className="text-red-500 text-sm mt-1">{fieldErrors.password}</span>
+                                        )}
+                                    </div>
+                                    <div className="flex flex-col">
+                                        <FormInput
+                                            name="password2"
+                                            type="password"
+                                            placeholder="Подтверждение пароля"
+                                            value={formData.password2}
+                                            onChange={handleChange}
+                                            className={fieldErrors.password2 ? "border-red-500" : ""}
+                                        />
+                                        {fieldErrors.password2 && (
+                                            <span className="text-red-500 text-sm mt-1">{fieldErrors.password2}</span>
+                                        )}
+                                    </div>
                                 </div>
                                 <BtnAction type={"submit"} className={"mt-6 md:mt-8 font-bold font-gilroy text-xl"} black>
                                     Зарегистрироваться
