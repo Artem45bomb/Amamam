@@ -17,7 +17,7 @@ export const SectionUser:FC<Props> = ({onChange,currentSection,...data}) =>{
         setFile(file);
     };
 
-    const path = useMemo(() => (file ? URL.createObjectURL(file)  : data.photo && show ? data.photo : ''), [file,data,show]);
+    const path = useMemo(() => (file ? URL.createObjectURL(file)  : data.avatar && show ? data.avatar : ''), [file,data,show]);
 
 
     return  <section>
@@ -26,8 +26,8 @@ export const SectionUser:FC<Props> = ({onChange,currentSection,...data}) =>{
 
                 <div className={"flex gap-6 items-start pt-[0.65rem]"}>
                     <div className={"capitalize text-black font-gilroy text-base"}>
-                        <p className={data.nameFirst ? "":"text-secondary"}>{data.nameFirst ? data.nameFirst:"Имя"  }</p>
-                        <p className={data.nameLast ? "": "text-secondary"}>{data.nameLast ?data.nameLast:"Фамилия"}</p>
+                        <p className={data.first_name ? "":"text-secondary"}>{data.first_name ? data.first_name:"Имя"  }</p>
+                        <p className={data.last_name ? "": "text-secondary"}>{data.last_name ?data.last_name:"Фамилия"}</p>
                     </div>
                     <div className={"w-32 aspect-square relative"}>
                         <input hidden name={"photo"} id={"photo"} value={path}/>

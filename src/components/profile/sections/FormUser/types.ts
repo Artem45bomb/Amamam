@@ -1,3 +1,7 @@
-import {ChangeSection} from "@/components/profile/sections/types";
+import { Section } from "../types";
+import { UserProfile } from "@/types/user";
 
-export type Props = UserProfile & ChangeSection
+export type Props = UserProfile & {
+  onChange: (section: Section) => void;
+  currentSection: Section;
+};

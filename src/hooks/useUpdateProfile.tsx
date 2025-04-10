@@ -15,9 +15,8 @@ export const useUpdateProfile = () => {
     async (state: SetStateAction<UserProfile>) => {
       if (data) {
         const profile = typeof state === 'function' ? state(data) : state;
-
         query.setQueryData(getUserProfileQueryKey(), profile);
-        await update({
+        return await update({
           user: {
             ...data,
             userProfile: profile,

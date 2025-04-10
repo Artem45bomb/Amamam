@@ -1,7 +1,8 @@
 import { AuthOptions } from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
 import { SessionApp } from '@/auth/type';
-import {userProfile} from "@/auth/mock";
+import {authService} from "@/services/impl/AuthService";
+import {setTokens} from "@/utils/cookies/server";
 
 export const authOptions: AuthOptions = {
   secret: process.env.NEXTAUTH_SECRET,
@@ -45,25 +46,34 @@ export const authOptions: AuthOptions = {
   },
   providers: [
     CredentialsProvider({
+      type: "credentials",
       name: 'Credentials',
       credentials: {
         username: { label: 'Email', type: 'email' },
         password: { label: 'Password', type: 'password' },
       },
       async authorize(credentials) {
-        if (!credentials) return null;
+        if (!credentials)
+          throw new Error('Invalid credentials');
         try {
+          const {username,password} = credentials;
+          console.log(credentials)
+          const tokens = await authService.login(username,password)
+          const userProfile = await authService.getUserProfile(tokens.access)
+          await setTokens({
+            access:tokens.access,
+            refresh:tokens.refresh
+          })
 
           return {
-            id: userProfile._id,
+            id: ""+userProfile.id,
             email: userProfile.email,
             userProfile:userProfile,
           };
-        } catch (e) {
-          console.error('headers:', e);
+        } catch {
           throw new Error('Invalid credentials');
         }
-      },
+      }
     }),
   ],
 };
