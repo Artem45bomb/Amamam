@@ -33,9 +33,6 @@ export const FormUser:FC<Props> = ({...data}) => {
             <FormInput placeholder={"Город"} name={"city"} defaultValue={data.city ?? ''}/>
             <FormInput placeholder={"Номер телефона"} name={"phone"} defaultValue={data.phone}/>
             <FormInput placeholder={"email"} name={"email"} defaultValue={data.email}/>
-            <FormInput placeholder={"Адрес доставки"} name={"delivery_address"} defaultValue={data.delivery_address ?? ''}/>
-            <FormInput placeholder={"Почтовый индекс"} name={"delivery_postal_code"} defaultValue={data.delivery_postal_code ?? ''}/>
-            <FormInput placeholder={"Страна"} name={"delivery_country"} defaultValue={data.delivery_country ?? ''}/>
 
             <BtnAction disabled={false} type={"submit"} className={"font-bold font-gilroy text-xl"} black>
                 сохранить
